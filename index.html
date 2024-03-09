@@ -9,12 +9,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
 
         * {
-            font-family: "Dongle", sans-serif;
-            font-size: 25px;
-            font-weight: 400;
+            font-family: "Gothic A1", sans-serif;
+            font-weight: 100;
             font-style: normal;
         }
 
@@ -50,18 +49,27 @@
         }
 
         .mycards {
-            width: 1200px;
-
-            margin: 30px auto 0px auto;
+            width: 60%; /* 화면 너비의 100%로 조절 */
+            height: 20%;
+            max-width: 1600px; /* 최대 너비 설정 */
+            margin: 30px auto auto auto; /* 가운데 정렬 */
+            padding-bottom: 100px;
         }
 
-        .copyright {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 10px;
-        font-size: 24px;
-        color: #999;
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            text-align: right;
+            padding: 2px;
+        }
+
+        .about{
+            text-align:center;
+            padding-top: 10px;
         }
     </style>
 </head>
@@ -74,6 +82,8 @@
             <button onclick = "window.open('https://blog.naver.com/0ddomobb0')">Blog</button>
         </div>
     </div>
+
+    <div class="about">저의 대표 포트폴리오입니다. 이 외의 작품은 아트스테이션에서 보실 수 있습니다.</div>
 
     <div class="mycards">
         <div class="row row-cols-1 row-cols-md-5 g-4">
@@ -149,7 +159,10 @@
             </div>
         </div>
     </div>
-    <p class="copyright">© 2024 stadrem@naver.com. All rights reserved.</p>
+
+    <div class="footer">
+        <p class="copyright">© 2024 stadrem@naver.com. All rights reserved.</p>
+    </div>
 </body>
 
 </html>
