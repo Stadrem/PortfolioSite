@@ -6,15 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김동수의 포트폴리오</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!--부트스트랩-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" /> <!--fade-left 스크롤 애니메이션-->
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap'); /*구글 폰트*/
 
         * {
-            font-family: "Gothic A1", sans-serif;
+            font-family: "Gothic A1", sans-serif; /*구글 폰트*/
             font-weight: 100;
             font-style: normal;
+        }
+
+        .about {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .abouttext {
+            padding-top: 20px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .mytitle {
@@ -53,7 +73,7 @@
             margin: 30px auto auto auto;
             padding-bottom: 50px;
         }
-
+        
         .footer {
             position: fixed;
             bottom: 0;
@@ -66,19 +86,6 @@
             text-align: right;
             padding: 1px;
         }
-
-        .about {
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
     </style>
 </head>
 
@@ -86,87 +93,103 @@
     <div class="mytitle">
         <h1>3D Modeling Portfolio</h1>
         <div class="buttons">
-            <button onclick="window.open('https://www.artstation.com/stadrem')">Artstatin</button>
+            <button onclick="window.open('https://www.artstation.com/stadrem')">Artstation</button>
             <button onclick="window.open('https://blog.naver.com/0ddomobb0')">Blog</button>
             <button onclick="window.open('https://github.com/Stadrem')">Github</button>
         </div>
     </div>
 
-    <div class="about">저의 대표 포트폴리오입니다. 이 외의 작품은 아트스테이션에서 보실 수 있습니다.</div>
+
+    <div class="about">
+        <div class="section">
+            <button type="button" class="btn btn-primary" disabled>About</button>
+        </div>
+        <p class="abouttext">안녕하세요. 김동수입니다. <br>아래에 리스트는 저의 대표 포트폴리오 작품들입니다. <br>이 외의 개인 작품은 Artstation에서 보실 수 있습니다.</p>
+    </div>
 
     <div class="section">
         <button type="button" class="btn btn-primary" disabled>Character Modeling</button>
     </div>
 
-    <div class="mycards">
+    <div class="mycards"> <!--캐릭터 모델링 항목-->
         <div class="row row-cols-1 row-cols-md-5 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/YoyDb" target="_blank">
-                        <img src="img/001.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">OdinSphere - Velvet</h5>
-                        <p class="card-text">3DS MAX, PhotoShop, Marmoset Toolbag</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2016.06</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/Jn8zd" target="_blank">
-                        <img src="img/002.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Warcraft - Thrall</h5>
-                        <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2016.10</small>
+            <div data-aos="fade-left"> <!--fade-left 스크롤 애니메이션-->
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/YoyDb" target="_blank">
+                            <img src="img/001.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">OdinSphere - Velvet</h5>
+                            <p class="card-text">3DS MAX, PhotoShop, Marmoset Toolbag</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2016.06</small>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/0r5vK" target="_blank">
-                        <img src="img/003.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">MassEffect - Shepherd</h5>
-                        <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2017.01</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/ADnv5" target="_blank">
-                        <img src="img/004.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Toukiden2 - Benizuki</h5>
-                        <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2017.03</small>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/Jn8zd" target="_blank">
+                            <img src="img/002.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Warcraft - Thrall</h5>
+                            <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2016.10</small>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/ELnnz8" target="_blank">
-                        <img src="img/005.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">My Character</h5>
-                        <p class="card-text">3DS MAX, Subtance Painter, Unity</p>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/0r5vK" target="_blank">
+                            <img src="img/003.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">MassEffect - Shepherd</h5>
+                            <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2017.01</small>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2021.06</small>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/ADnv5" target="_blank">
+                            <img src="img/004.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Toukiden2 - Benizuki</h5>
+                            <p class="card-text">3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2017.03</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/ELnnz8" target="_blank">
+                            <img src="img/005.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">My Character</h5>
+                            <p class="card-text">3DS MAX, Subtance Painter, Unity</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2021.06</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,33 +200,37 @@
         <button type="button" class="btn btn-primary" disabled>Game</button>
     </div>
 
-    <div class="mycards">
+    <div class="mycards"> <!--개인 제작 게임 항목-->
         <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/8eYJPG" target="_blank">
-                        <img src="img/006.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Tower Maze</h5>
-                        <p class="card-text">Unreal 4, 3DS MAX, Subtance Painter</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2021.06</small>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/8eYJPG" target="_blank">
+                            <img src="img/006.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Tower Maze</h5>
+                            <p class="card-text">Unreal 4, 3DS MAX, Subtance Painter</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2021.06</small>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <a href="https://www.artstation.com/artwork/lxwbZo" target="_blank">
-                        <img src="img/007.jpg" class="card-img-top" alt="3D Character Modeling">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">Labyrinth</h5>
-                        <p class="card-text">Unreal 4, 3DS MAX, Subtance Painter, Marvelous Designer</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">2021.7</small>
+            <div data-aos="fade-left">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://www.artstation.com/artwork/lxwbZo" target="_blank">
+                            <img src="img/007.jpg" class="card-img-top" alt="3D Character Modeling">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Labyrinth</h5>
+                            <p class="card-text">Unreal 4, 3DS MAX, Subtance Painter, Marvelous Designer</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2021.7</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,6 +240,11 @@
     <div class="footer">
         <p class="copyright">© 2024 stadrem@naver.com. All rights reserved.</p>
     </div>
+    
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> <!--스크롤 애니메이션-->
+    <script>
+        AOS.init();
+    </script> <!--스크롤 애니메이션-->
 </body>
 
 </html>
