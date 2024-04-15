@@ -11,7 +11,8 @@
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> <!--스크롤 애니메이션-->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!--부트스트랩-->
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--부트스트랩-->
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"> <!--fade-left 스크롤 애니메이션-->
 
@@ -126,7 +127,9 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">My Character</h5>
-                                <p class="card-text">3DS MAX, Subtance Painter, Unity</p>
+                                <p class="card-text">3DS MAX, Subtance Painter, Unity
+                                    <p><button id="babylonjs-run-btn" type="button" class="btn btn-outline-dark">3D View</button></p>
+                                </p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-body-secondary">2021.06</small>
@@ -186,6 +189,19 @@
             <img src="img/email.png" alt="Email Icon" width="30" height="30">
         </a>
     </footer>
+
+    <aside id="babylon-viewer" style="display: none;">
+        <div id="babylon-viewer-header">
+            <p>Babylon JS Viwer</p>
+            <button type="button" class="btn-close" aria-label="Close" id="babylonjs-close-btn"></button>
+        </div>
+        <div id="babylon-viewer-render">
+            <canvas id="renderCanvas"></canvas>
+        </div>
+    </aside>
 </body>
+
+<script src="js/babylon.js" type="module"></script> <!--babylon js load-->
+<script src="js/viwer.js" type="module"></script> <!--babylon js load-->
 
 </html>
