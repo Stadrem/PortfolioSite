@@ -1,5 +1,8 @@
 const canvas = document.getElementById("renderCanvas"); // Get the canvas element
 
+canvas.width = 720;
+canvas.height = 1280;
+
 // 페이지 로드 시 캔버스 크기를 조정합니다.
 resizeCanvas();
 
