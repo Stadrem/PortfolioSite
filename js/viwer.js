@@ -1,5 +1,7 @@
 const canvas = document.getElementById("renderCanvas"); // Get the canvas element
 
+// 페이지 로드 시 캔버스 크기를 조정합니다.
+resizeCanvas();
 
 const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
 
@@ -48,16 +50,8 @@ function resizeCanvas() {
     var width = window.innerWidth;
     var height = window.innerHeight;
 
-    // PC 해상도 조건
-    if (width >= 1280) {
-        canvas.width = width;
-        canvas.height = height;
-    }
-    // 모바일 해상도 조건
-    else {
-        canvas.width = width;
-        canvas.height = height;
-    }
+    canvas.width = width;
+    canvas.height = height;
 }
 
 // 캔버스 컨테이너의 크기를 가져옵니다.
