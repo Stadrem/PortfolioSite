@@ -7,11 +7,9 @@ const createScene = function () {
     // This creates a basic Babylon Scene object (non-mesh)
     const scene = new BABYLON.Scene(engine);
 
-    // This creates and positions a free camera (non-mesh)
-    const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
-
-    // This targets the camera to scene origin
-    camera.setTarget(BABYLON.Vector3.Zero());
+    var camera = new BABYLON.ArcRotateCamera("Camera", 
+        Math.PI / 2, Math.PI / 4, 10, 
+        new BABYLON.Vector3(0, 0, 0), scene);
 
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
@@ -22,14 +20,18 @@ const createScene = function () {
     // Default intensity is 1. Let's dim the light a small amount
     light.intensity = 0.7;
 
-    // Our built-in 'sphere' shape.
-    const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2, segments: 32 }, scene);
-
-    // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
 
     // Our built-in 'ground' shape.
     const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 6, height: 6 }, scene);
+
+    BABYLON.SceneLoader.ImportMeshAsync("", "glb/", "AAA.glb", scene).then((result) => {
+        // 여기서 result.meshes[0]는 불러온 .glb 파일의 루트 메시입니다.
+        // 필요한 변환을 적용할 수 있습니다.
+        const rootMesh = result.meshes[0];
+        rootMesh.position.x = 0; // 예를 들어, x 위치를 조정합니다.
+        rootMesh.position.y = 0; // y 위치를 조정합니다.
+        rootMesh.position.z = 0; // z 위치를 조정합니다.
+    });
 
     return scene;
 };

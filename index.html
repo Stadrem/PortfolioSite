@@ -185,22 +185,26 @@
     <footer class="footer">
         <p class="copyright">© 2024 stadrem@naver.com. All rights reserved.</p> <!--Made by Dongsu Kim-->
         <a href="mailto:stadrem@naver.com" class="email"> <!--이메일-->
-            <img src="img/email.png" alt="Email Icon" width="30" height="30">
+            <img src="img/email.png" alt="Email Icon" width="25" height="25">
         </a>
     </footer>
 
     <aside id="babylon-viewer" style="display: none;">
         <div id="babylon-viewer-header">
-            <p>Babylon JS Viwer</p>
+            <p>Babylon JS 3D Viwer</p>
             <button type="button" class="btn-close" aria-label="Close" id="babylonjs-close-btn"></button>
         </div>
         <div id="babylon-viewer-render">
             <canvas id="renderCanvas"></canvas>
+            <div id="warning">
+                This is TEST Scene.
+            </div>
         </div>
     </aside>
 </body>
 
 <script src="js/babylon.js" type="module"></script> <!--babylon js load-->
+<script src="js/babylonjs.loaders.min.js" type="module"></script>
 <script src="js/viwer.js" type="module"></script> <!--babylon js load-->
 <script src="js/script.js" type="module"></script> <!--간단한 스크립트-->
 

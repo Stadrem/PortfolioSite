@@ -107,19 +107,22 @@ footer {
 .email {
     position: fixed;
     bottom: 10px;
-    left: 30px;
+    left: 10px;
     z-index: 9999;
 }
 
 #babylon-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
     position: fixed;
     top: 5%;
     left: 10%;
     width: 80%;
-    height: 85%;
     background-color: #5599ff;
     z-index: 8999;
     overflow: hidden;
+    margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -135,24 +138,39 @@ p {
 #babylonjs-run-btn {
     display: flex;
     margin: auto;
-    /* 부모가 flex일 때 margin: auto로 수평 중앙 정렬 가능 */
     margin-top: 15%;
 }
 
 #renderCanvas {
-    padding: 5px;
     width: 100%;
     height: 100%;
 }
 
 #babylon-viewer-header {
+    position: fixed;
     display: flex;
-    color: white;
     justify-content: space-between;
-    margin: 10px;
+    width: 79%;
+    background-color: #5599ff;
+    max-width: 1800px;
+    color: white;
+    padding: 6px;
+    margin: 5px;
     z-index: 9999;
+}
+.btn-close{
+    float: right;
 }
 
 #babylon-viewer-render {
     height: 800px;
+}
+
+#warning{
+    position: fixed;
+    left: 25%;
+    top: 50%;
+    font-size: 80px;
+    color: red;
+    z-index: 1;
 }
