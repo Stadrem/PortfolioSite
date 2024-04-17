@@ -86,9 +86,8 @@
 footer {
     position: fixed;
     bottom: 0;
-    right: 0;
     height: 50px;
-    width: 100%;
+    width: 98%;
     background-color: #5599ff;
     border: 1px solid #ddd;
     color: white;
@@ -100,6 +99,7 @@ footer {
 
 /* Remove any default margin */
 .copyright {
+    font-size: 13px;
     margin: 0;
 }
 
@@ -117,8 +117,9 @@ footer {
     align-items:center;
     position: fixed;
     top: 5%;
-    left: 10%;
+    left: 9%;
     width: 80%;
+    height: 80%;
     background-color: #5599ff;
     z-index: 8999;
     overflow: hidden;
@@ -142,6 +143,7 @@ p {
 }
 
 #renderCanvas {
+    padding-bottom: 2%;
     width: 100%;
     height: 100%;
 }
@@ -163,7 +165,8 @@ p {
 }
 
 #babylon-viewer-render {
-    height: 800px;
+    padding-top: 20%;
+    max-width: 80%;
 }
 
 #warning{
