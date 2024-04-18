@@ -119,7 +119,6 @@ footer {
     top: 5%;
     left: 9%;
     width: 80%;
-    height: 80%;
     background-color: #5599ff;
     z-index: 8999;
     overflow: hidden;
@@ -165,8 +164,8 @@ p {
 }
 
 #babylon-viewer-render {
-    padding-top: 20%;
-    max-width: 80%;
+    padding-top: 5%;
+    max-width: 90%;
 }
 
 #warning{
