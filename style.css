@@ -137,7 +137,7 @@ p {
 #babylonjs-run-btn {
     display: flex;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 5px;
 }
 
 #renderCanvas {
