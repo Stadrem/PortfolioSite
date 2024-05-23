@@ -81,13 +81,14 @@
     flex-direction: column;
     text-align: center;
     padding-bottom: 5%;
+    line-height: 28px;
 }
 
 footer {
-    position: fixed;
+    
     bottom: 0;
     height: 50px;
-    width: 98%;
+    width: 100%;
     background-color: #5599ff;
     border: 1px solid #ddd;
     color: white;
@@ -97,7 +98,6 @@ footer {
     align-items: center;
 }
 
-/* Remove any default margin */
 .copyright {
     font-size: 13px;
     margin: 0;
@@ -105,10 +105,9 @@ footer {
 
 /* 이메일 아이콘 스타일 */
 .email {
-    position: fixed;
     bottom: 10px;
-    left: 10px;
-    z-index: 9999;
+    right: 10px;
+    margin-right: 10px;
 }
 
 #babylon-viewer {
@@ -132,7 +131,7 @@ p {
 
 .card-body {
     padding: 5%;
-    min-height: 220px;
+    min-height: 300px;
 }
 
 #babylonjs-run-btn {
