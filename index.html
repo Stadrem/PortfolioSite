@@ -12,9 +12,31 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!--제이쿼리-->
     <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script> <!--스크롤 애니메이션-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!--부트스트랩-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--부트스트랩-->
     <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css"> <!--fade-left 스크롤 애니메이션-->
     <link rel="stylesheet" type="text/css" href="style.css"> <!--CSS-->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const topBtn = document.getElementById("topBtn");
+        
+            // 스크롤 이벤트
+            window.addEventListener("scroll", function () {
+                if (document.documentElement.scrollTop > 100 || document.body.scrollTop > 100) {
+                    topBtn.style.display = "block";
+                } else {
+                    topBtn.style.display = "none";
+                }
+            });
+        
+            // 버튼 클릭 시 맨 위로
+            topBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        </script>
 </head>
 
 <body>
@@ -30,15 +52,20 @@
     <main>
         <article class="about">
             <div class="section">
-                <button id="btnAbout" type="button" class="btn btn-primary">About</button>
+                <div class="alert alert-primary" role="alert">
+                    About
+                </div>
             </div>
-            <p class="abouttext" id="aboutTextToggle">안녕하세요. 김동수입니다. <br>아래에 리스트는 저의 대표 포트폴리오 작품들입니다. <br>이 외의 개인 작품은 Artstation에서 보실 수 있습니다.</p>
-
+            <p class="abouttext" id="aboutTextToggle">안녕하세요. 김동수입니다. <br>아래에 리스트는 저의 대표 포트폴리오 작품들입니다. <br>이 외의 개인 작품은
+                Artstation에서 보실 수 있습니다.</p>
+        
             <p class="abouttext" id="aboutTextToggle">각 카드를 클릭하면 상세 페이지가 팝업됩니다.</p>
         </article>
 
         <div class="section">
-            <button id="btnCM" type="button" class="btn btn-primary">Character Modeling</button>
+            <div class="alert alert-primary" role="alert">
+                Character Modeling
+            </div>
         </div>
 
         <div class="mycards" id="cmToggle"> <!--캐릭터 모델링 항목-->
@@ -48,7 +75,8 @@
                     <a href="https://www.artstation.com/artwork/eR99xJ" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/014.jpg" class="card-img-top" alt="3D Character Modeling, Original Character">
+                                <img src="img/014.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, Original Character">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Guardian Saeryeon</h4>
                                     <h5 class="card-title">Game: Original (Private project)</h5>
@@ -58,7 +86,7 @@
                                         <p>Unity Toon Shader를 사용했고, 하이폴리곤에서 추출한 노말맵과 핸드 페인팅을 사용했습니다.</p>
                                         <p>블렌더 MetaRig을 사용해서 리깅 작업까지 완료했고, 유니티 휴머노이드화하였습니다.</p>
                                         <p>이전 작업물보다 높은 퀄리티를 위해 UTS를 좀 더 공부하였고, 더 많은 텍스처(마스킹맵)을 사용해볼 수 있었습니다.</p>
-                                        <p>어떻게 하면 호요버스 아트 스타일을 낼 수 있는 지에 대해  많은 것을 공부한 작업물입니다.</p>
+                                        <p>어떻게 하면 호요버스 아트 스타일을 낼 수 있는 지에 대해 많은 것을 공부한 작업물입니다.</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -73,7 +101,8 @@
                     <a href="https://www.artstation.com/artwork/2By4RK" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/013.jpg" class="card-img-top" alt="3D Character Modeling, Original Character">
+                                <img src="img/013.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, Original Character">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Adventurer Altair</h4>
                                     <h5 class="card-title">Game: Original (Project R_PACA)</h5>
@@ -98,17 +127,20 @@
                     <a href="https://www.artstation.com/artwork/ELnnz8" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/005.jpg" class="card-img-top" alt="3D Character Modeling, Original Character">
+                                <img src="img/005.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, Original Character">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Haro</h4>
                                     <h5 class="card-title">Game: Original</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, Unity</p>
                                     <div class="card-text">
                                         <p>Cel Shading 느낌의 캐릭터를 제작해보았습니다.</p>
-                                        <p>Unity에서 Cel Shader를 적용하여 렌더링했고, 얼굴 Morph를 3ds max에서 제작하여 VRM 사양 모델으로 생성했습니다. 이후 아이폰과 연동하여 실시간 연동을 테스트 해보았습니다.</p>
+                                        <p>Unity에서 Cel Shader를 적용하여 렌더링했고, 얼굴 Morph를 3ds max에서 제작하여 VRM 사양 모델으로 생성했습니다.
+                                            이후 아이폰과 연동하여 실시간 연동을 테스트 해보았습니다.</p>
                                         <p>애니메 캐릭터 특유의 평면 스타일 눈을 제작하는데에 여러 방법을 연구하고 시도했습니다.</p>
                                     </div>
-                                    <p><button id="babylonjs-run-btn" type="button" class="btn btn-outline-dark">3D View</button></p>
+                                    <p><button id="babylonjs-run-btn" type="button" class="btn btn-outline-dark">3D
+                                            View</button></p>
                                 </div>
                                 <div class="card-footer">
                                     <small class="text-body-secondary">2021.06 (2 Weeks)</small>
@@ -127,7 +159,8 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Thrall</h4>
                                     <h5 class="card-title">Game: World of Warcraft</h5>
-                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
+                                        Toolbag</p>
                                     <div class="card-text">
                                         <p>개인적으로 좋아했던 게임, 월드 오브 워크래프트의 캐릭터를 제작했습니다.</p>
                                         <p>하이폴리곤 작업을 하여서Normal을 추출하였고, 디테일한 부분은 추가적으로 핸드페인팅으로 새겨넣었습니다.</p>
@@ -142,11 +175,12 @@
                     </a>
                 </div>
 
-                <div data-aos="fade-left"> <!--fade-left 스크롤 애니메이션-->
+                <div data-aos="fade-left">
                     <a href="https://www.artstation.com/artwork/YoyDb" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/001.jpg" class="card-img-top" alt="3D Character Modeling, OdinSphere's Velvet">
+                                <img src="img/001.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, OdinSphere's Velvet">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Velvet</h4>
                                     <h5 class="card-title">Game: OdinSphere</h5>
@@ -169,14 +203,17 @@
                     <a href="https://www.artstation.com/artwork/0r5vK" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/003.jpg" class="card-img-top" alt="3D Character Modeling, MassEffect's Shepherd">
+                                <img src="img/003.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, MassEffect's Shepherd">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Shepherd</h4>
                                     <h5 class="card-title">Game: MassEffect 3</h5>
-                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
+                                        Toolbag</p>
                                     <div class="card-text">
                                         <p>SF 스타일의 갑옷을 구현하고 싶어서 과거에 플레이 했던 게임의 캐릭터를 제작해보았습니다.</p>
-                                        <p>Substance Painter의 마스킹등을 활용해서 더티한 부분과 흠집 부분을 디테일하게 구현해보았습니다. 추가적으로 실사 기반의 Hair card를 처음 시도해보았습니다.</p>
+                                        <p>Substance Painter의 마스킹등을 활용해서 더티한 부분과 흠집 부분을 디테일하게 구현해보았습니다. 추가적으로 실사 기반의
+                                            Hair card를 처음 시도해보았습니다.</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -191,14 +228,17 @@
                     <a href="https://www.artstation.com/artwork/ADnv5" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/004.jpg" class="card-img-top" alt="3D Character Modeling, Toukiden2's Benizuki">
+                                <img src="img/004.jpg" class="card-img-top"
+                                    alt="3D Character Modeling, Toukiden2's Benizuki">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Benizuki</h4>
                                     <h5 class="card-title">Game: Toukiden2</h5>
-                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset Toolbag</p>
+                                    <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
+                                        Toolbag</p>
                                     <div class="card-text">
                                         <p>풍성하고 긴 Hair card 모델링을 구현하려고 시도했던 캐릭터 모델링입니다.</p>
-                                        <p>관절 부분마다 다양한 장식이 있어서 리깅에 어려움을 겪었습니다. 2D 아트를 레퍼런스 삼았지만, 이목구비를 완벽하게 동일하게 하는 것이 어려운 작업이라는 것을 느끼게 되었습니다.</p>
+                                        <p>관절 부분마다 다양한 장식이 있어서 리깅에 어려움을 겪었습니다. 2D 아트를 레퍼런스 삼았지만, 이목구비를 완벽하게 동일하게 하는 것이
+                                            어려운 작업이라는 것을 느끼게 되었습니다.</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -212,8 +252,67 @@
             </div>
         </div>
 
+        <!-- 애니메이션 파트. 일단 비활성화.
         <div class="section">
-            <button id="btnGM" type="button" class="btn btn-primary">Game</button>
+            <button id="btnGM" type="button" class="btn btn-primary">Animation</button>
+        </div>
+
+        <div class="mycards" id="gmToggle"> 
+            <div class="row row-cols-1 row-cols-md-2 g-2">
+
+                <div data-aos="fade-left">
+                    <div class="col">
+                        <div class="card h-100 animation-card" data-animations="character">
+                            <img src="img/015.jpg" class="card-img-top" alt="Character Animation">
+                            <div class="card-body">
+                                <h4 class="card-title">몬스터</h4>
+                                <p class="card-text-tools">Tools: Blender, MetaRig</p>
+                                <div class="card-text">
+                                    <p>몬스터 애니메이션</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2024.09~11</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="col">
+                        <div class="card h-100 animation-card" data-animations="character">
+                            <img src="img/016.jpg" class="card-img-top" alt="Character Animation">
+                            <div class="card-body">
+                                <h4 class="card-title">캐릭터</h4>
+                                <p class="card-text-tools">Tools: Blender, MetaRig</p>
+                                <div class="card-text">
+                                    <p>캐릭터 애니메이션</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2024.09~11</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="popup-gallery" class="gallery-popup" style="display:none;">
+            <div class="gallery-popup-content">
+                <button id="gallery-close-btn">&times;</button>
+                <div class="gallery-images" id="gallery-images"></div>
+            </div>
+        </div>
+     -->
+
+
+        <div class="section">
+            <div class="alert alert-primary" role="alert">
+                Programming
+            </div>
         </div>
 
         <div class="mycards" id="gmToggle"> <!--개인 제작 게임 항목-->
@@ -229,7 +328,8 @@
                                     <p class="card-text-tools">Tools: Unity 2023, C#</p>
                                     <div class="card-text">
                                         <p>메타버스 아카데미 3기, 최종 프로젝트에서 제작한 창작 플랫폼입니다.</p>
-                                        <p>플레이어 캐릭터 모델링을 담당했고, 그 외 프로그래밍 요소로써 아바타 생성 씬, 아바타 API 통신, 칭호(업적), 주사위 시스템을 구현했습니다.</p>
+                                        <p>플레이어 캐릭터 모델링을 담당했고, 그 외 프로그래밍 요소로써 아바타 생성 씬, 아바타 API 통신, 칭호(업적), 주사위 시스템을
+                                            구현했습니다.</p>
                                         <p>플레이어 캐릭터의 쉐이더는 Unity Toon Shader(UTS)를 사용 했고 텍스처 작업은 서브스탠스 페인터에서 했습니다.</p>
                                         <p>상속과 스태틱 활용해서 최대한 코드를 간결화하려고 노력했습니다. 스태틱의 중요성과 재사용 가능한 코드 디자인의 필요성을 느꼈습니다.</p>
                                     </div>
@@ -252,7 +352,8 @@
                                     <p class="card-text-tools">Tools: Unity 2023, C#</p>
                                     <div class="card-text">
                                         <p>메타버스 아카데미 3기, 1차 프로젝트에서 제작한 모작 게임입니다.</p>
-                                        <p>마리오 플레이어 캐릭터를 제작했고, 그 외 포스트 프로세싱, 라이팅, 메테리얼을 설정하고 전투 UI, 커맨드 안내 씬, 승리 연출씬을 제작했습니다.</p>
+                                        <p>마리오 플레이어 캐릭터를 제작했고, 그 외 포스트 프로세싱, 라이팅, 메테리얼을 설정하고 전투 UI, 커맨드 안내 씬, 승리 연출씬을
+                                            제작했습니다.</p>
                                         <p>애니메이터 컨트롤러를 기반으로 애니메이션을 컨트롤했고, 애니메이션 이벤트를 활용해서 공격 판정을 설정했습니다.</p>
                                         <p>싱글톤 패턴으로 이펙트 및 사운드 매니저를 만들어서 이펙트와 사운드를 관리해보았습니다.</p>
                                     </div>
@@ -269,119 +370,127 @@
                     <a href="https://youtu.be/4T2UUT2355M?si=v4CQzWK-rlz0ih7o" target="_blank">
                         <div class="col">
                             <div class="card h-100">
-                                <img src="img/011.jpg" class="card-img-top" alt="Game">                    
-                            </a>
-                                <div class="card-body">
-                                    <h4 class="card-title">BioShock 모작 게임</h4>
-                                    <p class="card-text-tools">Tools: Unity 2023, C#, Blender</p>
-                                    <div class="card-text">
-                                        <p>메타버스 아카데미 3기, 2차 프로젝트에서 제작한 모작 게임입니다.</p>
-                                        <p>팀의 팀장을 맡았고, 일정 관리, 일반 몬스터 개발, 전반적인 시스템 개발, UI, 상점, 애니메이션, 3D 아트 보조를 맡았습니다.</p>
-                                        <p>네비 메쉬 및 FSM을 사용하여 몬스터의 행동을 관리했고, 싱글톤으로 시스템 매니저, 그리고 인터페이스등을 활용하여 코드를 작성했습니다.</p>
-                                        <p>플레이어의 1인칭 애니메이션을 블렌더로 직접 제작했습니다.</p>
-                                        <h3><a href="https://youtu.be/H6BhE-q13IA?si=qFLb3FlIxB76Ao2f" target="_blank">애니메이션 시연 링크</a></h3>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-body-secondary">2024.07~08</small>
-                                </div>
-                            </div>
-                        </div>
-
-                </div>
-
-
-                <div data-aos="fade-left">
-                    <a href="https://www.artstation.com/artwork/8eYJPG" target="_blank">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/006.jpg" class="card-img-top" alt="Original Game, Tower Mage">
-                                <div class="card-body">
-                                    <h4 class="card-title">Name: Tower Maze</h4>
-                                    <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter</p>
-                                    <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
-                                    <div class="card-text">
-                                        <p>언리얼 엔진 4으로 처음 제작한 미니 게임입니다.</p>
-                                        <p>3ds max에서 모델링들을 제작하여 프랍으로 가져와서 언리얼에서 씬을 구성했습니다. 약 한달의 시간이 주어졌는데, 장식물들은 무료 에셋으로 처리하다보니 시간의 여유가 있어서 캐릭터도 직접 만들어서 적용했습니다.</p>
-                                        <p>블루프린트를 활용하지 못한 게임이라 아쉬움이 남습니다.</p>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-body-secondary">2021.05~06</small>
-                                </div>
-                            </div>
-                        </div>
+                                <img src="img/011.jpg" class="card-img-top" alt="Game">
                     </a>
-                </div>
-
-                <div data-aos="fade-left">
-                    <a href="https://www.artstation.com/artwork/lxwbZo" target="_blank">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/007.jpg" class="card-img-top" alt="Original Game, Labyrinth">
-                                <div class="card-body">
-                                    <h4 class="card-title">Name: Labyrinth</h4>
-                                    <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter, Marvelous Designer</p>
-                                    <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
-                                    <div class="card-text">
-                                        <p>언리얼 엔진 4로 만든 미로 탈출 게임입니다.</p>
-                                        <p>블루프린트 기능을 활용하여 문이 열리고/닫히는 기능, 구덩이에 떨어지면 특정 지점으로 텔레포트하는 기능, 열쇠 획득 기능, 시간 기록, 클리어등 게임으로써 갖춰야 할 기본적인 기능등을 구현했습니다.</p>
-                                        <p>마블러스 디자이너를 활용하여 캐릭터를 제작하였습니다.</p>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-body-secondary">2021.06~07</small>
-                                </div>
-                            </div>
+                    <div class="card-body">
+                        <h4 class="card-title">BioShock 모작 게임</h4>
+                        <p class="card-text-tools">Tools: Unity 2023, C#, Blender</p>
+                        <div class="card-text">
+                            <p>메타버스 아카데미 3기, 2차 프로젝트에서 제작한 모작 게임입니다.</p>
+                            <p>팀의 팀장을 맡았고, 일정 관리, 일반 몬스터 개발, 전반적인 시스템 개발, UI, 상점, 애니메이션, 3D 아트 보조를 맡았습니다.</p>
+                            <p>네비 메쉬 및 FSM을 사용하여 몬스터의 행동을 관리했고, 싱글톤으로 시스템 매니저, 그리고 인터페이스등을 활용하여 코드를 작성했습니다.</p>
+                            <p>플레이어의 1인칭 애니메이션을 블렌더로 직접 제작했습니다.</p>
+                            <h3><a href="https://youtu.be/H6BhE-q13IA?si=qFLb3FlIxB76Ao2f" target="_blank">애니메이션 시연
+                                    링크</a></h3>
                         </div>
-                    </a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">2024.07~08</small>
+                    </div>
                 </div>
-
-                <div data-aos="fade-left">
-                    <a href="https://youtu.be/ZP1CdUDBSoY" target="_blank">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/008.jpg" class="card-img-top" alt="Original Game, Forest">
-                                <div class="card-body">
-                                    <h4 class="card-title">Name: Forest</h4>
-                                    <p class="card-text-tools">Tools: Unity 2022 ~ For study</p>
-                                    <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
-                                    <div class="card-text">
-                                        <p>공부 목적으로 제작한 유니티 게임입니다.</p>
-                                        <p>C#의 기초와 유니티 기능, 애니메이션 전환, UI, 랜드스케이프, 프리팹에 대해 배웠습니다.</p>
-                                        <p>재직중에 강의를 들은 것이라 별도의 캐릭터를 제작할 시간이 나지 못한 것이 아쉬웠습니다.</p>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-body-secondary">2023.12~2024.01</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div data-aos="fade-left">
-                    <a href="https://github.com/Stadrem/PortfolioSite" target="_blank">
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src="img/009.jpg" class="card-img-top" alt="This Homepage">
-                                <div class="card-body">
-                                    <h4 class="card-title">This Homepage</h4>
-                                    <p class="card-text-tools">Tools: Visual Studio Code, HTML, CSS, JavaScript, Bootstrap</p>
-                                    <div class="card-text">
-                                        <p>공부 목적으로 제작한 홈페이지입니다.</p>
-                                        <p>계속해서 개선중이고, 추후에는 3D 뷰어(Babylon js)를 추가하는 것이 목적입니다.</p>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-body-secondary">2024.03~</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
             </div>
+
+        </div>
+
+
+        <div data-aos="fade-left">
+            <a href="https://www.artstation.com/artwork/8eYJPG" target="_blank">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/006.jpg" class="card-img-top" alt="Original Game, Tower Mage">
+                        <div class="card-body">
+                            <h4 class="card-title">Name: Tower Maze</h4>
+                            <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter</p>
+                            <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
+                            <div class="card-text">
+                                <p>언리얼 엔진 4으로 처음 제작한 미니 게임입니다.</p>
+                                <p>3ds max에서 모델링들을 제작하여 프랍으로 가져와서 언리얼에서 씬을 구성했습니다. 약 한달의 시간이 주어졌는데, 장식물들은 무료 에셋으로 처리하다보니
+                                    시간의 여유가 있어서 캐릭터도 직접 만들어서 적용했습니다.</p>
+                                <p>블루프린트를 활용하지 못한 게임이라 아쉬움이 남습니다.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2021.05~06</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div data-aos="fade-left">
+            <a href="https://www.artstation.com/artwork/lxwbZo" target="_blank">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/007.jpg" class="card-img-top" alt="Original Game, Labyrinth">
+                        <div class="card-body">
+                            <h4 class="card-title">Name: Labyrinth</h4>
+                            <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter, Marvelous Designer
+                            </p>
+                            <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
+                            <div class="card-text">
+                                <p>언리얼 엔진 4로 만든 미로 탈출 게임입니다.</p>
+                                <p>블루프린트 기능을 활용하여 문이 열리고/닫히는 기능, 구덩이에 떨어지면 특정 지점으로 텔레포트하는 기능, 열쇠 획득 기능, 시간 기록, 클리어등
+                                    게임으로써 갖춰야 할 기본적인 기능등을 구현했습니다.</p>
+                                <p>마블러스 디자이너를 활용하여 캐릭터를 제작하였습니다.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2021.06~07</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div data-aos="fade-left">
+            <a href="https://youtu.be/ZP1CdUDBSoY" target="_blank">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/008.jpg" class="card-img-top" alt="Original Game, Forest">
+                        <div class="card-body">
+                            <h4 class="card-title">Name: Forest</h4>
+                            <p class="card-text-tools">Tools: Unity 2022 ~ For study</p>
+                            <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
+                            <div class="card-text">
+                                <p>공부 목적으로 제작한 유니티 게임입니다.</p>
+                                <p>C#의 기초와 유니티 기능, 애니메이션 전환, UI, 랜드스케이프, 프리팹에 대해 배웠습니다.</p>
+                                <p>재직중에 강의를 들은 것이라 별도의 캐릭터를 제작할 시간이 나지 못한 것이 아쉬웠습니다.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2023.12~2024.01</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div data-aos="fade-left">
+            <a href="https://github.com/Stadrem/PortfolioSite" target="_blank">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/009.jpg" class="card-img-top" alt="This Homepage">
+                        <div class="card-body">
+                            <h4 class="card-title">This Homepage</h4>
+                            <p class="card-text-tools">Tools: Visual Studio Code, HTML, CSS, JavaScript, Bootstrap</p>
+                            <div class="card-text">
+                                <p>공부 목적으로 제작한 홈페이지입니다.</p>
+                                <p>계속해서 개선중이고, 추후에는 3D 뷰어(Babylon js)를 추가하는 것이 목적입니다.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">2024.03~</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        </div>
+        </div>
+
+        <div> 
+            <button type="button" id="topBtn" class="btn btn-primary" onclick="scrollToTop()" title="Go to top">Top</button>
         </div>
     </main>
 
