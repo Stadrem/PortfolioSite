@@ -21,6 +21,10 @@ a:hover {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .abouttext {
@@ -47,7 +51,7 @@ a:hover {
 }
 
 .mytitle {
-    height: 230px;
+    height: 250px;
     width: 100%;
     color: white;
     display: flex;
@@ -197,6 +201,36 @@ p {
     font-size: 80px;
     color: red;
     z-index: 1;
+}
+
+/* 자기소개 */
+.profile-img {
+    max-width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.about-me {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-me p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-me ul {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    list-style-type: "✔ ";
+    color: #333;
 }
 
 /* 마우스 오버 광택 */
