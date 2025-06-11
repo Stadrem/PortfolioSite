@@ -17,6 +17,32 @@ a:hover {
     color: inherit; /* 텍스트 색상 변화 방지 */
 }
 
+/* 카드 아이콘 */
+.card-img-container { 
+    position: relative;
+}
+
+.tool-icons {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    gap: 4px;
+    z-index: 2;
+}
+
+.tool-icon {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+/* 카드 아이콘 */
+
 .about {
     text-align: center;
     padding-top: 20px;
