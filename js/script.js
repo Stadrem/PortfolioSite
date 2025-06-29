@@ -6,6 +6,23 @@ $("#babylonjs-close-btn").click(async function () {
     $('#babylon-viewer').toggle();
 })
 
+// 명함 뒤집기 기능
+document.addEventListener('DOMContentLoaded', function() {
+    const businessCard = document.getElementById('businessCard');
+    
+    if (businessCard) {
+        businessCard.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+        
+        // 터치 이벤트도 지원
+        businessCard.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.classList.toggle('flipped');
+        });
+    }
+});
+
 const tiltableDivs = document.querySelectorAll('.col');
 
 tiltableDivs.forEach(tiltableDiv => {
