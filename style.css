@@ -1,74 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
-/*구글 폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* ===== CSS Custom Properties ===== */
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --bg-card-hover: rgba(255, 255, 255, 0.08);
+    --bg-glass: rgba(255, 255, 255, 0.06);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --text-primary: #e8e8ed;
+    --text-secondary: #9898a6;
+    --text-muted: #5c5c6e;
+    --accent-start: #7c6aef;
+    --accent-end: #4f8fff;
+    --accent-glow: rgba(124, 106, 239, 0.25);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset & Base ===== */
 * {
-    font-family: "Gothic A1", sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     font-style: normal;
-    /*구글 폰트*/
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    /* 기본 폰트 두께를 300으로 설정하여 전반적으로 가볍지만 읽기 편한 스타일을 유지합니다. */
-    font-weight: 300;
+    font-weight: 400;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-a { 
-    text-decoration: none; /* 링크 태그 변화 금지 */
+a {
+    text-decoration: none;
     color: inherit;
+    transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: inherit; /* 텍스트 색상 변화 방지 */
+    color: inherit;
 }
 
-/* 카드 아이콘 */
-.card-img-container { 
+p {
+    margin-bottom: 5px;
+}
+
+/* ===== 헤더 (Hero) ===== */
+.mytitle {
+    min-height: 340px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('img/000.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.mytitle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0.5) 0%, rgba(10, 10, 15, 0.85) 100%);
+    z-index: 0;
+}
+
+.mytitle > * {
+    position: relative;
+    z-index: 1;
+}
+
+.mytitle h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #fff 30%, var(--accent-start));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.buttons > button {
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 110px;
+    height: 44px;
+    color: white;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.buttons > button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header_icon {
+    margin: 5px;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header_icon img {
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 4px;
+    transition: transform var(--transition-fast);
+}
+
+.header_icon img:hover {
+    transform: scale(1.15);
+}
+
+.header_icon2 {
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+/* ===== 카드 아이콘 (프로젝트 카드 내부) ===== */
+.card-img-container {
     position: relative;
 }
 
 .tool-icons {
     position: absolute;
-    top: 8px;
-    left: 8px;
+    top: 10px;
+    left: 10px;
     display: flex;
-    gap: 4px;
+    gap: 6px;
     z-index: 2;
 }
 
 .tool-icon {
-    width: 48px;
-    height: 48px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 4px;
-    padding: 2px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform var(--transition-fast);
 }
 
-/* 카드 아이콘 */
+.tool-icon:hover {
+    transform: scale(1.1);
+}
 
+/* ===== 자기소개 명함 ===== */
 .about {
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* 명함 스타일 */
 .business-card-section {
-    padding: 40px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .business-card {
-    width: 400px;
-    height: 250px;
-    perspective: 1000px;
+    width: 420px;
+    height: 260px;
+    perspective: 1200px;
     cursor: pointer;
 }
 
@@ -77,7 +209,7 @@ a:hover {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 }
 
@@ -90,39 +222,42 @@ a:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 24px;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .card-front {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b69 50%, #1a1a2e 100%);
     color: white;
+    box-shadow: 0 20px 60px rgba(124, 106, 239, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .card-back {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #3d1b5c 50%, #1a1a2e 100%);
     color: white;
     transform: rotateY(180deg);
     text-align: left;
-    padding: 25px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(124, 106, 239, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .profile-container {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .card-profile-img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     object-fit: cover;
+    box-shadow: 0 4px 20px rgba(124, 106, 239, 0.3);
 }
 
 .card-info {
@@ -130,54 +265,60 @@ a:hover {
 }
 
 .card-name {
-    font-size: 1.8rem;
-    font-weight: 700; /* 제목 폰트 두께를 명확하게 지정 */
-    margin-bottom: 5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
 }
 
-.card-title {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    opacity: 0.9;
+.business-card-section .card-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    opacity: 0.85;
+    font-weight: 400;
 }
 
 .card-email {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    font-style: italic;
+    font-size: 0.85rem;
+    opacity: 0.65;
+    font-style: normal;
+    font-weight: 300;
 }
 
 .click-hint {
     position: absolute;
-    bottom: 10px;
-    right: 15px;
-    font-size: 1rem;
-    opacity: 0.6;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
-    animation: pulse 2s infinite;
+    bottom: 12px;
+    right: 16px;
+    font-size: 0.8rem;
+    opacity: 0.4;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.6);
+    animation: pulse 2.5s ease-in-out infinite;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
 }
 
 .card-content h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.01em;
 }
 
 .card-content p {
-    font-size: 0.8rem;
-    font-weight: 400; /* 명함 뒷면 본문 가독성 향상 */
-    line-height: 1.4;
-    margin-bottom: 15px;
+    font-size: 0.78rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 12px;
     text-align: left;
+    opacity: 0.9;
 }
 
 .card-details {
@@ -188,103 +329,143 @@ a:hover {
 
 .card-details li {
     font-size: 0.7rem;
-    font-weight: 400; /* 명함 뒷면 리스트 가독성 향상 */
-    margin-bottom: 8px;
-    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 6px;
+    line-height: 1.4;
     text-align: left;
+    opacity: 0.9;
 }
 
-/* 반응형 디자인 */
+/* 명함 반응형 */
 @media (max-width: 768px) {
     .business-card {
         width: 320px;
-        height: 200px;
+        height: 210px;
     }
-    
+
     .card-name {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-    
+
     .card-content h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
-    
+
     .card-content p {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
     }
-    
+
     .card-details li {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 }
 
-.abouttext {
-    padding-top: 20px;
-    font-size: 16px;
-    line-height: 30px;
-}
-
+/* ===== 섹션 구분선 (alert) ===== */
 .section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 
-.header_icon{
-    margin: 5px;
-    margin-top: 15px;
-}
-
-.header_icon2{
-    margin-top: 5px;
-    font-size: 10px;
-}
-
-.mytitle {
-    height: 250px;
-    width: 100%;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('img/000.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.buttons>button {
-    background-color: transparent;
-    width: 100px;
-    height: 50px;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    margin: 10px;
-    margin-top: 20px;
-}
-
-.mycards {
-    width: 70%;
-    height: 20%;
-    max-width: 1600px;
-    margin: 30px auto auto auto;
-    padding-bottom: 70px;
-}
-
-.card-title {
-    min-height: 1rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    /* 모든 제목 태그에 일관된 굵기를 적용합니다. */
+.section .alert-primary {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: -0.02em;
+    padding: 16px 0;
+    position: relative;
+    text-align: center;
+}
+
+.section .alert-primary::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+/* ===== 프로젝트 카드 영역 ===== */
+.mycards {
+    width: 85%;
+    max-width: 1400px;
+    margin: 20px auto 0;
+    padding-bottom: 60px;
+}
+
+/* Bootstrap 카드 오버라이드 — 글래스모피즘 */
+.mycards .card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+    color: var(--text-primary);
+}
+
+.mycards .card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(124, 106, 239, 0.2);
+    box-shadow: 0 8px 40px rgba(124, 106, 239, 0.1), 0 0 0 1px rgba(124, 106, 239, 0.08);
+    transform: translateY(-4px);
+}
+
+.mycards .card-img-top {
+    border-radius: 0;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transition: filter var(--transition-smooth);
+}
+
+.mycards .card:hover .card-img-top {
+    filter: brightness(1.05);
+}
+
+.mycards .card-body {
+    padding: 24px;
+    min-height: 280px;
+}
+
+.mycards .card-footer {
+    background: transparent;
+    border-top: 1px solid var(--border-glass);
+    padding: 12px 24px;
+}
+
+.mycards .card-footer .text-body-secondary {
+    color: var(--text-muted) !important;
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
+/* 제목 스타일 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.mycards h4.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    min-height: 1rem;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.mycards h5.card-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    min-height: auto;
+    color: var(--text-secondary);
+    opacity: 1;
 }
 
 h5 {
@@ -292,9 +473,11 @@ h5 {
 }
 
 .card-text-tools {
-    font-family: arial;
-    font-size: 0.7rem;
-    margin-bottom: 1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
 .card-text {
@@ -303,65 +486,99 @@ h5 {
     flex-direction: column;
     text-indent: 0.8rem;
     padding-bottom: 1%;
-    line-height: 1.5rem;
-    font-size: 0.9rem; 
-    font-weight: 400; /* 프로젝트 설명 텍스트의 가독성을 위해 normal(400) 두께로 설정 */
+    line-height: 1.65rem;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--text-secondary);
 }
 
+.card-text b, .card-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* 카드 내 링크 버튼 */
+.card-text a[style] {
+    display: inline-block;
+}
+
+.abouttext {
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+/* ===== 푸터 ===== */
 footer {
-    
     bottom: 0;
-    height: 50px;
+    height: 56px;
     width: 100%;
-    background-color: #5599ff;
-    border: 1px solid #ddd;
-    color: white;
-    padding: 1px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    padding: 0 24px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .copyright {
-    font-size: 13px;
+    font-size: 0.75rem;
     margin: 0;
+    font-weight: 400;
 }
 
-/* 이메일 아이콘 스타일 */
 .email {
     bottom: 10px;
     right: 10px;
-    margin-right: 10px;
+    margin-right: 12px;
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
 }
 
+.email:hover {
+    opacity: 1;
+}
+
+/* ===== Babylon 뷰어 ===== */
 #babylon-viewer {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     position: fixed;
     top: 5%;
     left: 9%;
     width: 80%;
-    background-color: #5599ff;
+    background-color: var(--bg-secondary);
     z-index: 8999;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-glass);
 }
 
-p {
-    margin-bottom: 5px;
-}
-
-.card-body {
-    padding: 5%;
-    min-height: 300px;
-}
-
-#babylonjs-run-btn {
+#babylon-viewer-header {
+    position: fixed;
     display: flex;
-    margin: auto;
-    margin-top: 5px;
+    justify-content: space-between;
+    width: 79%;
+    background-color: var(--bg-secondary);
+    max-width: 1800px;
+    color: var(--text-primary);
+    padding: 8px 12px;
+    margin: 5px;
+    z-index: 9999;
+}
+
+.btn-close {
+    float: right;
+    filter: invert(1) brightness(0.8);
+}
+
+#babylon-viewer-render {
+    padding-top: 5%;
+    max-width: 90%;
 }
 
 #renderCanvas {
@@ -370,42 +587,28 @@ p {
     height: 100%;
 }
 
-#babylon-viewer-header {
-    position: fixed;
+#babylonjs-run-btn {
     display: flex;
-    justify-content: space-between;
-    width: 79%;
-    background-color: #5599ff;
-    max-width: 1800px;
-    color: white;
-    padding: 6px;
-    margin: 5px;
-    z-index: 9999;
-}
-.btn-close{
-    float: right;
+    margin: auto;
+    margin-top: 5px;
 }
 
-#babylon-viewer-render {
-    padding-top: 5%;
-    max-width: 90%;
-}
-
-#warning{
+#warning {
     position: fixed;
     left: 25%;
     top: 50%;
     font-size: 80px;
-    color: red;
+    color: #f5576c;
     z-index: 1;
 }
 
-/* 자기소개 */
+/* ===== 자기소개 (About Me) ===== */
 .profile-img {
     max-width: 50%;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
+
 .about-me {
     margin-top: 20px;
     margin-bottom: 50px;
@@ -414,7 +617,7 @@ p {
 
 .about-me h2 {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -427,13 +630,13 @@ p {
     padding-left: 1.2rem;
     font-size: 0.95rem;
     list-style-type: "✔ ";
-    color: #333;
+    color: var(--text-secondary);
 }
 
-/* 마우스 오버 광택 */
+/* ===== 마우스 오버 광택 (다크 테마용) ===== */
 .col {
     position: relative;
-    overflow: hidden; /* before 엘리먼트가 넘치지 않도록 */
+    overflow: hidden;
 }
 
 .col::before {
@@ -445,9 +648,9 @@ p {
     height: 100%;
     background: linear-gradient(
         0deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgba(124, 106, 239, 0) 0%,
+        rgba(124, 106, 239, 0.12) 50%,
+        rgba(124, 106, 239, 0) 100%
     );
     transform: rotate(25deg);
     opacity: 0;
@@ -456,7 +659,7 @@ p {
 }
 
 .col:hover::before {
-    animation: shineUp 2s ease forwards;
+    animation: shineUp 1.5s ease forwards;
 }
 
 @keyframes shineUp {
@@ -465,25 +668,68 @@ p {
         opacity: 1;
     }
     30% {
-        opacity: 0.6;
+        opacity: 0.5;
     }
     100% {
         top: -100%;
         opacity: 0;
     }
 }
-/* 마우스 오버 광택 끝*/
 
+/* ===== Top 버튼 ===== */
 #topBtn {
     position: fixed;
-    bottom: 60px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #5599ff;
-    color: white;
+    bottom: 70px;
+    right: 24px;
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-glass);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-primary);
     cursor: pointer;
-    display: none; /* 처음에는 숨김 */
+    display: none;
     z-index: 999;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+#topBtn:hover {
+    background: rgba(124, 106, 239, 0.2);
+    border-color: rgba(124, 106, 239, 0.3);
+    box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 992px) {
+    .mycards {
+        width: 92%;
+    }
+
+    .mytitle h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mycards {
+        width: 95%;
+    }
+
+    .mytitle h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons > button {
+        width: 90px;
+        height: 38px;
+        font-size: 0.78rem;
+    }
+
+    .mycards .card-body {
+        padding: 16px;
+        min-height: 240px;
+    }
 }
