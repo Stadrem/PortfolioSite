@@ -57,10 +57,9 @@
             <img src="img/icon_photoshop.png" alt="Photoshop" title="Photoshop CC" height="40">
             <img src="img/icon_krita.png" alt="Krita" title="Krita 5" height="40">
             <img src="img/icon_davinci.png" alt="Davinci resolve" title="Davinci resolve 19" height="40">
-            <img src="img/icon_antigravity.png" alt="Google Antigravity" title="Google Antigravity" height="40">
-        </div> 
+        </div>
         <div class="header_icon2">
-            <strong>ETC:</strong> Marvelous Designer, Marmoset, Github Desktop, C#, Visual Studio Code, Notion, Figma, Coda, Trello.
+            <strong>Etc:</strong> Marvelous Designer, Marmoset, Github, C#, Visual Studio Code, Figma, Coda, Trello.
         </div>
     </header>
     <!-- 상단 헤더 끝-->
@@ -114,20 +113,20 @@
         </div>
 
         <div class="mycards" id="gmToggle"> 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-2">
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://coda.io/d/_dX2k_UHER1o/_sufJGbPc">
-                            <div class="card h-100 project-card">
+                    <a href="https://coda.io/d/_dX2k_UHER1o/_sufJGbPc" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/015.jpg" class="card-img-top" alt="Game">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Irian: City of ruin</h4>
-                                    <p class="card-summary">Steam 출시 로그라이크 3D 액션 게임</p>
                                     <h5 class="card-title">Role: 팀장 / 기획 / 캐릭터 모델링 / 이펙트</h5>
-                                    <p class="card-text-tools">Tools: Unity 6, Blender, Substance Painter</p>
+                                    <p class="card-text-tools">Tools: Unity 6</p>
                                     <div class="card-text">
                                         <p>
                                             <div style="display: flex; justify-content: center; align-items: center;">
@@ -153,20 +152,21 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.youtube.com/watch?v=WVRnNTGtYiE">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.youtube.com/watch?v=WVRnNTGtYiE" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/012.jpg" class="card-img-top" alt="Game">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">R_PACA</h4>
-                                    <p class="card-summary">메타버스 아카데미 최종 프로젝트 창작 플랫폼</p>
                                     <h5 class="card-title">Role: 주사위 시스템 및 아바타 시스템 개발 / 캐릭터 모델링/</h5>
-                                    <p class="card-text-tools">Tools: Unity 2023, C#, Blender</p>
+                                    <p class="card-text-tools">Tools: Unity 2023, C#</p>
                                     <div class="card-text">
                                         <p>메타버스 아카데미 3기, 최종 프로젝트에서 제작한 창작 플랫폼입니다.</p>
                                         <p><b>플레이어 캐릭터 모델링</b>을 담당했고, 그 외 프로그래밍 요소로써 <b>아바타 생성 씬 개발, 아바타 API 통신 개발, 칭호(업적) 시스템 개발, 주사위 시스템 개발</b>을 했습니다.</p>
@@ -179,20 +179,21 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://youtu.be/cstwApESvQU?si=7QqAZkp_Ku7_Xhqn">
-                            <div class="card h-100 project-card">
+                    <a href="https://youtu.be/cstwApESvQU?si=7QqAZkp_Ku7_Xhqn" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/010.jpg" class="card-img-top" alt="Game">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Super Smash Bros 모작 게임</h4>
-                                    <p class="card-summary">대난투 스매시 브라더스 모작 격투 게임</p>
                                     <h5 class="card-title">Role: 캐릭터 마리오 개발 / 씬 제작 / UIUX</h5>
-                                    <p class="card-text-tools">Tools: Unity 2023, C#, Blender</p>
+                                    <p class="card-text-tools">Tools: Unity 2023, C#</p>
                                     <div class="card-text">
                                         <p>메타버스 아카데미 3기, 1차 프로젝트에서 제작한 모작 게임입니다.</p>
                                         <p><b>마리오 플레이어 캐릭터 시스템을 개발</b>했고, 그 외 <b>포스트 프로세싱, 라이팅, 메테리얼</b>, 그리고 추가적인 개발 요소로써 <b>전투 UI, UI 애니메이션 커맨드 안내 씬,
@@ -207,18 +208,19 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://youtu.be/4T2UUT2355M?si=v4CQzWK-rlz0ih7o">
-                            <div class="card h-100 project-card">
+                    <a href="https://youtu.be/4T2UUT2355M?si=v4CQzWK-rlz0ih7o" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/011.jpg" class="card-img-top" alt="Game">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">BioShock 모작 게임</h4>
-                                    <p class="card-summary">바이오쇼크 모작 FPS 게임</p>
                                     <h5 class="card-title">Role: 팀장 / 일반 몬스터 개발 / UIUX / 1인칭 애니메이션 제작</h5>
                                     <p class="card-text-tools">Tools: Unity 2023, C#, Blender</p>
                                     <div class="card-text">
@@ -238,15 +240,16 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/8eYJPG">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/8eYJPG" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/006.jpg" class="card-img-top" alt="Original Game, Tower Mage">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Tower Maze</h4>
-                                    <p class="card-summary">언리얼 엔진 4 미니 게임</p>
                                     <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter</p>
                                     <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
                                     <div class="card-text">
@@ -262,15 +265,16 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/lxwbZo">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/lxwbZo" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/007.jpg" class="card-img-top" alt="Original Game, Labyrinth">
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Labyrinth</h4>
-                                    <p class="card-summary">언리얼 엔진 4 미로 탈출 게임</p>
                                     <p class="card-text-tools">Tools: Unreal 4, 3DS MAX, Subtance Painter, Marvelous
                                         Designer
                                     </p>
@@ -288,6 +292,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
             </div>
@@ -302,11 +307,12 @@
         </div>
 
         <div class="mycards" id="cmToggle">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-2">
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/eRXmkP">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/eRXmkP" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/017.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Original Character">
                                 <div class="tool-icons">
@@ -317,7 +323,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Rift Monsters</h4>
-                                    <p class="card-summary">팀 프로젝트 몬스터 3D 모델링</p>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: Blender, Subtance Painter, Unity, UTS</p>
                                     <div class="card-text">
@@ -333,11 +338,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/eR99xJ">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/eR99xJ" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/014.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Original Character">
                                 <div class="tool-icons">
@@ -348,7 +355,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Guardian Saeryeon</h4>
-                                    <p class="card-summary">호요버스 스타일 주인공 캐릭터 모델링</p>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: Blender, Subtance Painter, Unity, UTS</p>
                                     <div class="card-text">
@@ -364,11 +370,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/2By4RK">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/2By4RK" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/013.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Original Character">
                                 <div class="tool-icons">
@@ -379,7 +387,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Adventurer Altair</h4>
-                                    <p class="card-summary">메타버스 아카데미 팀 프로젝트 캐릭터</p>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: Blender, Subtance Painter, Unity, UTS</p>
                                     <div class="card-text">
@@ -395,11 +402,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/ELnnz8">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/ELnnz8" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/005.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Original Character">
                                 <div class="tool-icons">
@@ -410,7 +419,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Haro</h4>
-                                    <p class="card-summary">셀 쉐이딩 스타일 오리지널 캐릭터</p>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, Unity</p>
                                     <div class="card-text">
@@ -429,11 +437,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/Jn8zd">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/Jn8zd" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/002.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Warcraft's Thrall">
                                 <div class="tool-icons">
@@ -443,7 +453,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Thrall</h4>
-                                    <p class="card-summary">월드 오브 워크래프트 팬아트 모델링</p>
                                     <h5 class="card-title">Game: World of Warcraft</h5>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
@@ -459,11 +468,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/YoyDb">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/YoyDb" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/001.jpg" class="card-img-top"
                                     alt="3D Character Modeling, OdinSphere's Velvet">
                                 <div class="tool-icons">
@@ -473,7 +484,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Velvet</h4>
-                                    <p class="card-summary">오딘 스피어 핸드페인팅 캐릭터</p>
                                     <h5 class="card-title">Game: OdinSphere</h5>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, PhotoShop, Marmoset Toolbag</p>
@@ -488,11 +498,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/0r5vK">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/0r5vK" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/003.jpg" class="card-img-top"
                                     alt="3D Character Modeling, MassEffect's Shepherd">
                                 <div class="tool-icons">
@@ -502,7 +514,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Shepherd</h4>
-                                    <p class="card-summary">매스 이펙트 SF 캐릭터 모델링</p>
                                     <h5 class="card-title">Game: MassEffect 3</h5>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
@@ -518,11 +529,13 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/ADnv5">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/ADnv5" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/004.jpg" class="card-img-top"
                                     alt="3D Character Modeling, Toukiden2's Benizuki">
                                 <div class="tool-icons">
@@ -532,7 +545,6 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Benizuki</h4>
-                                    <p class="card-summary">토귀전 2 캐릭터 모델링</p>
                                     <h5 class="card-title">Game: Toukiden2</h5>
                                     <h5 class="card-title">Role: 3D 모델링, 텍스처, 리깅, 렌더링</h5>
                                     <p class="card-text-tools">Tools: 3DS MAX, Subtance Painter, PhotoShop, Marmoset
@@ -548,6 +560,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
             </div>
@@ -562,18 +575,18 @@
         </div>
 
         <div class="mycards" id="gmToggle"> 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-2">
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://www.artstation.com/artwork/gRXK0K">
-                            <div class="card h-100 project-card">
+                    <a href="https://www.artstation.com/artwork/gRXK0K" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/016.jpg" class="card-img-top" alt="Game">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Irian: City of ruin 이펙트</h4>
-                                    <p class="card-summary">Unity VFX Graph & Shader Graph 이펙트</p>
                                     <p class="card-text-tools">Tools: Unity 6, Visual Effect Graph, Shader Graph</p>
                                     <div class="card-text">
                                         <p>Space Rift: 배경 오브젝트에 물결치는 균열 이펙트를 덧씌우기 위해 Shader Graph로 메테리얼을 제작하고 유니티의
@@ -590,6 +603,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
             </div>
@@ -604,18 +618,18 @@
         </div>
         
         <div class="mycards" id="gmToggle"> 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="row row-cols-1 row-cols-md-2 g-2">
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://youtu.be/ZP1CdUDBSoY">
-                            <div class="card h-100 project-card">
+                    <a href="https://youtu.be/ZP1CdUDBSoY" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/008.jpg" class="card-img-top" alt="Original Game, Forest">
                                 <div class="tool-icons">
                                     <img src="img/icon_unity.png" alt="Unity" title="Unity" class="tool-icon">
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Name: Forest</h4>
-                                    <p class="card-summary">유니티 공부용 게임 프로젝트</p>
                                     <p class="card-text-tools">Tools: Unity 2022 ~ For study</p>
                                     <p class="card-text-tools">Trees, Plants: Download from the Asset Store</p>
                                     <div class="card-text">
@@ -629,15 +643,16 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
                 <div data-aos="fade-left">
-                        <div class="col" data-link="https://github.com/Stadrem/PortfolioSite">
-                            <div class="card h-100 project-card">
+                    <a href="https://github.com/Stadrem/PortfolioSite" target="_blank">
+                        <div class="col">
+                            <div class="card h-100">
                                 <img src="img/009.jpg" class="card-img-top" alt="This Homepage">
                                 <div class="card-body">
                                     <h4 class="card-title">This Homepage</h4>
-                                    <p class="card-summary">HTML/CSS/JS 포트폴리오 사이트</p>
                                     <p class="card-text-tools">Tools: Visual Studio Code, HTML, CSS, JavaScript,
                                         Bootstrap</p>
                                     <div class="card-text">
@@ -650,6 +665,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
 
             </div>
@@ -681,39 +697,8 @@
             </div>
         </div>
     </aside>
-
-    <!-- Project Detail Modal -->
-    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="projectModalLabel"></h4>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal-image-section">
-                        <img id="modalImage" src="" class="modal-project-img" alt="">
-                    </div>
-                    <div class="modal-info-section">
-                        <div id="modalToolIcons" class="modal-tools-icons"></div>
-                        <div id="modalRole"></div>
-                        <div id="modalTools"></div>
-                        <div id="modalDescription"></div>
-                        <div id="modalPeriod" class="modal-period"></div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a id="modalExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-modal-link">
-                        외부 링크 열기 ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="api/babylon.js" type="module"></script> <!--babylon js-->
 <script src="api/babylonjs.loaders.min.js" type="module"></script> <!--babylon js-->
 <script src="js/viwer.js" type="module"></script> <!--babylon js 뷰어-->
