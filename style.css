@@ -727,8 +727,9 @@ footer {
     line-height: 1.4;
 }
 
-/* ===== Project Modal ===== */
-#projectModal .modal-content {
+/* ===== Project & Career Modal ===== */
+#projectModal .modal-content,
+#careerModal .modal-content {
     background: var(--bg-secondary);
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(20px);
@@ -738,19 +739,61 @@ footer {
     overflow: hidden;
 }
 
-#projectModal .modal-header {
+#projectModal .modal-header,
+#careerModal .modal-header {
     border-bottom: 1px solid var(--border-glass);
     padding: 20px 24px;
 }
 
-#projectModal .modal-title {
+#projectModal .modal-title,
+#careerModal .modal-title {
     font-size: 1.3rem;
     font-weight: 600;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
 }
 
-#projectModal .modal-body {
+#projectModal .modal-body,
+#careerModal .modal-body {
     padding: 0;
+}
+
+#careerModal .modal-body {
+    padding: 20px 24px;
+}
+
+.custom-career-table {
+    border-color: var(--border-glass) !important;
+    color: var(--text-primary) !important;
+    background-color: transparent !important;
+    font-size: clamp(0.65rem, 1vw + 0.4rem, 0.85rem);
+}
+.custom-career-table th,
+.custom-career-table td {
+    border-color: var(--border-glass) !important;
+    background-color: transparent !important;
+}
+.custom-career-table thead th {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-start) !important;
+}
+.custom-career-table .text-muted {
+    color: var(--text-muted) !important;
+}
+
+@media (max-width: 768px) {
+    #careerModal .modal-body {
+        padding: 12px 10px;
+    }
+    #careerModal .modal-title {
+        font-size: 1.15rem;
+    }
+    .custom-career-table th,
+    .custom-career-table td {
+        padding: 0.4rem 0.25rem !important;
+    }
 }
 
 .modal-image-section {

@@ -6,6 +6,26 @@ $("#babylonjs-close-btn").click(async function () {
     $('#babylon-viewer').toggle();
 })
 
+// 프로젝트 경력 모달 띄우기 (외부의 career.html 파일 불어오기)
+$(document).ready(function() {
+    $('#showCareerBtn').click(function() {
+        if ($('#careerModal').length === 0) {
+            $('#careerModalContainer').load('career.html', function(response, status, xhr) {
+                if (status == "error") {
+                    console.error("경력사항 데이터를 불러오는데 실패했습니다: " + xhr.status + " " + xhr.statusText);
+                    return;
+                }
+                const careerModal = new bootstrap.Modal(document.getElementById('careerModal'));
+                careerModal.show();
+            });
+        } else {
+            let careerModal = bootstrap.Modal.getInstance(document.getElementById('careerModal'));
+            if (!careerModal) careerModal = new bootstrap.Modal(document.getElementById('careerModal'));
+            careerModal.show();
+        }
+    });
+});
+
 // 명함 뒤집기 기능
 document.addEventListener('DOMContentLoaded', function() {
     const businessCard = document.getElementById('businessCard');
