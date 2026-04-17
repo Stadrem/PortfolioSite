@@ -220,3 +220,28 @@ document.querySelectorAll('.card-video').forEach(video => {
         video.pause();
     });
 });
+
+// 나만의 커스텀 태그 정의하기 (웹 컴포넌트)
+class ToolIcon extends HTMLElement {
+    connectedCallback() {
+        const tool = this.getAttribute('tool');
+        
+        const iconData = {
+            'unity': { src: 'img/icon_unity.png', title: 'Unity', alt: 'Unity' },
+            'substance': { src: 'img/icon_substance.png', title: 'Substance Painter', alt: 'Substance Painter' },
+            'max': { src: 'img/icon_max.png', title: '3DS Max', alt: '3DS Max' },
+            'blender': { src: 'img/icon_blender.png', title: 'Blender', alt: 'Blender' },
+            'zbrush': { src: 'img/icon_zbrush.png', title: 'Zbrush', alt: 'Zbrush' },
+            'photoshop': { src: 'img/icon_photoshop.png', title: 'Photoshop', alt: 'Photoshop' },
+            'krita': { src: 'img/icon_krita.png', title: 'Krita', alt: 'Krita' },
+            'davinci': { src: 'img/icon_davinci.png', title: 'Davinci resolve', alt: 'Davinci resolve' }
+        };
+
+        const data = iconData[tool ? tool.toLowerCase() : ''];
+        
+        if (data) {
+            this.innerHTML = `<img src="${data.src}" alt="${data.alt}" title="${data.title}" class="tool-icon">`;
+        }
+    }
+}
+customElements.define('tool-icon', ToolIcon);
