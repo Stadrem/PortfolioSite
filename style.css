@@ -79,7 +79,7 @@ p {
     z-index: 0;
 }
 
-.mytitle > * {
+.mytitle>* {
     position: relative;
     z-index: 1;
 }
@@ -101,7 +101,7 @@ p {
     margin-top: 20px;
 }
 
-.buttons > button {
+.buttons>button {
     background: var(--bg-glass);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -116,7 +116,7 @@ p {
     transition: all var(--transition-fast);
 }
 
-.buttons > button:hover {
+.buttons>button:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
@@ -217,7 +217,8 @@ p {
     transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -300,8 +301,15 @@ p {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .card-content h3 {
@@ -448,7 +456,12 @@ p {
 }
 
 /* 제목 스타일 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -493,7 +506,8 @@ h5 {
     color: var(--text-secondary);
 }
 
-.card-text b, .card-text strong {
+.card-text b,
+.card-text strong {
     color: var(--text-primary);
     font-weight: 600;
 }
@@ -647,12 +661,10 @@ footer {
     left: -50%;
     width: 200%;
     height: 100%;
-    background: linear-gradient(
-        0deg,
-        rgba(124, 106, 239, 0) 0%,
-        rgba(124, 106, 239, 0.12) 50%,
-        rgba(124, 106, 239, 0) 100%
-    );
+    background: linear-gradient(0deg,
+            rgba(124, 106, 239, 0) 0%,
+            rgba(124, 106, 239, 0.12) 50%,
+            rgba(124, 106, 239, 0) 100%);
     transform: rotate(25deg);
     opacity: 0;
     pointer-events: none;
@@ -668,9 +680,11 @@ footer {
         top: 100%;
         opacity: 1;
     }
+
     30% {
         opacity: 0.5;
     }
+
     100% {
         top: -100%;
         opacity: 0;
@@ -768,17 +782,20 @@ footer {
     background-color: transparent !important;
     font-size: clamp(0.65rem, 1vw + 0.4rem, 0.85rem);
 }
+
 .custom-career-table th,
 .custom-career-table td {
     border-color: var(--border-glass) !important;
     background-color: transparent !important;
 }
+
 .custom-career-table thead th {
     background-color: rgba(255, 255, 255, 0.04) !important;
     color: #fff !important;
     font-weight: 600;
     border-bottom: 2px solid var(--accent-start) !important;
 }
+
 .custom-career-table .text-muted {
     color: var(--text-muted) !important;
 }
@@ -787,9 +804,11 @@ footer {
     #careerModal .modal-body {
         padding: 12px 10px;
     }
+
     #careerModal .modal-title {
         font-size: 1.15rem;
     }
+
     .custom-career-table th,
     .custom-career-table td {
         padding: 0.4rem 0.25rem !important;
@@ -891,6 +910,66 @@ footer {
     color: white !important;
 }
 
+/* ===== Collapsible Section Toggle ===== */
+.section-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    user-select: none;
+    transition: opacity var(--transition-fast);
+}
+
+.section-toggle:hover {
+    opacity: 0.75;
+}
+
+.toggle-chevron {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.section-toggle.collapsed .toggle-chevron {
+    transform: rotate(0deg);
+}
+
+.section-toggle:not(.collapsed) .toggle-chevron {
+    transform: rotate(180deg);
+}
+
+/* Collapsible content */
+.collapsible-content {
+    max-height: 5000px;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s ease,
+        padding-bottom 0.4s ease;
+    opacity: 1;
+}
+
+.collapsible-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    padding-bottom: 0 !important;
+}
+
+/* ===== Effect Card Video ===== */
+.card-video-container {
+    margin-top: 12px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+
+.card-video {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
 /* ===== 반응형 ===== */
 @media (max-width: 992px) {
     .mycards {
@@ -911,7 +990,7 @@ footer {
         font-size: 1.5rem;
     }
 
-    .buttons > button {
+    .buttons>button {
         width: 90px;
         height: 38px;
         font-size: 0.78rem;

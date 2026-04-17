@@ -7,10 +7,10 @@ $("#babylonjs-close-btn").click(async function () {
 })
 
 // 프로젝트 경력 모달 띄우기 (외부의 career.html 파일 불어오기)
-$(document).ready(function() {
-    $('#showCareerBtn').click(function() {
+$(document).ready(function () {
+    $('#showCareerBtn').click(function () {
         if ($('#careerModal').length === 0) {
-            $('#careerModalContainer').load('career.html', function(response, status, xhr) {
+            $('#careerModalContainer').load('career.html', function (response, status, xhr) {
                 if (status == "error") {
                     console.error("경력사항 데이터를 불러오는데 실패했습니다: " + xhr.status + " " + xhr.statusText);
                     return;
@@ -27,16 +27,16 @@ $(document).ready(function() {
 });
 
 // 명함 뒤집기 기능
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const businessCard = document.getElementById('businessCard');
-    
+
     if (businessCard) {
-        businessCard.addEventListener('click', function() {
+        businessCard.addEventListener('click', function () {
             this.classList.toggle('flipped');
         });
-        
+
         // 터치 이벤트도 지원
-        businessCard.addEventListener('touchend', function(e) {
+        businessCard.addEventListener('touchend', function (e) {
             e.preventDefault();
             this.classList.toggle('flipped');
         });
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Project card click → open modal
     document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', function(e) {
+        card.addEventListener('click', function (e) {
             // 카드 내부 링크 클릭은 모달 열지 않음
             if (e.target.closest('a')) return;
 
@@ -145,6 +145,87 @@ tiltableDivs.forEach(tiltableDiv => {
 
     tiltableDiv.addEventListener('mouseleave', () => {
         tiltableDiv.style.transform = 'none';
+    });
+});
+
+// Collapsible section toggle
+document.querySelectorAll('.section-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function () {
+        const targetId = this.dataset.target;
+        const content = document.getElementById(targetId);
+        if (!content) return;
+
+        const isCollapsed = this.classList.contains('collapsed');
+
+        if (isCollapsed) {
+            // Open
+            this.classList.remove('collapsed');
+            content.classList.remove('collapsed');
+        } else {
+            // Close
+            this.classList.add('collapsed');
+            content.classList.add('collapsed');
+        }
+    });
+});
+
+// Hash based section toggle mapping
+const hashToSectionMap = {
+    '#game': 'gmContent',
+    '#modeling': 'cmContent',
+    '#effect': 'efContent',
+    '#etc': 'etcContent'
+};
+
+function handleHashChange() {
+    const hash = window.location.hash;
+    if (!hash || !hashToSectionMap[hash]) return;
+
+    const targetId = hashToSectionMap[hash];
+    
+    // Close all content sections and remove active state from toggles
+    document.querySelectorAll('.collapsible-content').forEach(content => {
+        if (content.id !== targetId) {
+            content.classList.add('collapsed');
+        }
+    });
+
+    document.querySelectorAll('.section-toggle').forEach(toggle => {
+        if (toggle.dataset.target !== targetId) {
+            toggle.classList.add('collapsed');
+        }
+    });
+
+    // Open target section
+    const targetContent = document.getElementById(targetId);
+    const targetToggle = document.querySelector(`.section-toggle[data-target="${targetId}"]`);
+
+    if (targetContent && targetToggle) {
+        targetContent.classList.remove('collapsed');
+        targetToggle.classList.remove('collapsed');
+        
+        // Scroll to the toggle slightly offset for header
+        setTimeout(() => {
+            const yOffset = -20;
+            const targetPosition = targetToggle.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }, 100);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', handleHashChange);
+window.addEventListener('hashchange', handleHashChange);
+
+// Video hover autoplay for effect cards
+document.querySelectorAll('.card-video').forEach(video => {
+    const card = video.closest('.project-card');
+    if (!card) return;
+
+    card.addEventListener('mouseenter', () => {
+        video.play().catch(() => { });
+    });
+    card.addEventListener('mouseleave', () => {
+        video.pause();
     });
 });
 
