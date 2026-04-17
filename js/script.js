@@ -1,11 +1,3 @@
-$("#babylonjs-run-btn").click(async function () {
-    $('#babylon-viewer').toggle();
-})
-
-$("#babylonjs-close-btn").click(async function () {
-    $('#babylon-viewer').toggle();
-})
-
 // 프로젝트 경력 모달 띄우기 (외부의 career.html 파일 불어오기)
 $(document).ready(function () {
     $('#showCareerBtn').click(function () {
@@ -182,7 +174,7 @@ function handleHashChange() {
     if (!hash || !hashToSectionMap[hash]) return;
 
     const targetId = hashToSectionMap[hash];
-    
+
     // Close all content sections and remove active state from toggles
     document.querySelectorAll('.collapsible-content').forEach(content => {
         if (content.id !== targetId) {
@@ -203,7 +195,7 @@ function handleHashChange() {
     if (targetContent && targetToggle) {
         targetContent.classList.remove('collapsed');
         targetToggle.classList.remove('collapsed');
-        
+
         // Scroll to the toggle slightly offset for header
         setTimeout(() => {
             const yOffset = -20;
@@ -228,5 +220,3 @@ document.querySelectorAll('.card-video').forEach(video => {
         video.pause();
     });
 });
-
-AOS.init();
