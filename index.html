@@ -572,6 +572,96 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
 
                 <div data-aos="fade-left">
+                    <div class="col" data-link="">
+                        <div class="card h-100 project-card">
+                            <img src="Effect/LineDraw_thumbnail.jpg" class="card-img-top" alt="Line Draw Effect">
+                            <div class="tool-icons">
+                                <tool-icon tool="unity"></tool-icon>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Line Draw</h4>
+                                <p class="card-summary">Shader Graph와 Visual Effect Graph를 활용한 라인 드로잉 이펙트</p>
+                                <h5 class="card-title">사내 프로젝트</h5>
+                                <p class="card-text-tools">Tools: Unity 6, Shader Graph, Visual Effect Graph</p>
+                                <div class="card-text">
+                                    <div class="card-video-container">
+                                        <video class="card-video" autoplay loop muted playsinline>
+                                            <source src="Effect/LineDraw_Video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <br>
+                                    <p><b>[최적화 및 배칭 감소]</b> 초기에는 4개의 라인을 개별 생성하여 배치 수가 급증할 위험(최소 40개 예상)이 있었습니다. 이를 해결하기
+                                        위해 사각형 라인 메쉬 1개로 변경하고, Visual Effect Graph(VEG)와 Shader Graph(SG)를 통합했습니다. SG에서
+                                        버텍스를 밀어내는 방식으로 형태를 유지하면서 <b>드로우 콜(배칭)을 1개로 단축</b>하는 최적화를 달성하였습니다.</p>
+                                    <br>
+                                    <img src="Effect/LineDraw_Shader.jpg" class="card-img-top" alt="Shader Graph">
+                                    <p><b>[SG_NeonRect 쉐이더]</b> 단순히 크기만 조절하면 메쉬가 늘어나 매핑이 깨지는 문제가 있었습니다. 이에 메쉬 UV를 수정(천장을
+                                        바라보게 전개)한 후 버텍스의 위치 자체를 쉐이더에서 제어하여 형태 변형을 방지했습니다.</p>
+                                    <br>
+                                    <img src="Effect/LineDraw_VFX.jpg" class="card-img-top" alt="VFX Graph">
+                                    <p><b>[VEG_BeamLineFix2 이펙트]</b> Single Burst로 메쉬를 생성합니다. 애니메이션은 Lifetime에 속도를 곱하여
+                                        계산하고, 초기화 보정치(-0.7)와 Clamp를 이용해 알파값이 예상치 못하게 터지는 현상을 막았습니다. 추가로 라인이 그려지는 연출 후
+                                        내부에 파티클 및 벽면이 자연스럽게 페이드인(알파 0→1)과 타일링 크기 보정과 함께 생성되게 구성했습니다.</p>
+                                    <br>
+                                    <img src="Effect/LineDraw_Script.jpg" class="card-img-top" alt="Script">
+                                    <p>마지막으로, 생성 이펙트들과 라인이 동시에 조화롭게 재생될 수 있도록, 최상위 프리팹에 스크립트를 부착해 로직을 하나로 간략화했습니다.</p>
+                                </div>
+                                <div class="card-video-container">
+                                    <video class="card-video" muted loop playsinline>
+                                        <source src="Effect/LineDraw_Video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2026.04</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="col" data-link="">
+                        <div class="card h-100 project-card">
+                            <img src="Effect/Wire_thumbnail.jpg" class="card-img-top" alt="Wire Frame Effect">
+                            <div class="tool-icons">
+                                <tool-icon tool="unity"></tool-icon>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Wire Frame</h4>
+                                <p class="card-summary">Shader Graph를 활용한 와이어 프레임 이펙트</p>
+                                <h5 class="card-title">사내 프로젝트</h5>
+                                <p class="card-text-tools">Tools: Unity 6, Shader Graph, Visual Effect Graph</p>
+                                <div class="card-text">
+                                    <div class="card-video-container">
+                                        <video class="card-video" autoplay loop muted playsinline>
+                                            <source src="Effect/Wire_Video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <br>
+                                    <p><b>[Render Objects 활용]</b> 50개가 넘는 메테리얼 각각에 와이어 프레임을 직접 새겨 넣는 비효율적인 작업을 피하기 위해,
+                                        기존 모델 위에 쉐이더를 덧씌우는 <b>Render Objects</b> 기능을 활용했습니다.</p>
+                                    <p><b>[독립 사용 및 Layer 제어]</b> 이 메테리얼은 라인 부분을 제외하면 투명하여 주로 덮어씌우는 용도로 쓰입니다. 오브젝트(및 하위
+                                        오브젝트)의 레이어를 <code>Emission</code>으로 변경하기만 하면 스크립트에서도 간편하게 이펙트를 제어할 수 있습니다.</p>
+                                    <br>
+                                    <img src="Effect/Wire_Shader.jpg" class="card-img-top" alt="Shader Graph">
+                                    <br>
+                                    <p><b>[애니메이션 효과 구현]</b> 오브젝트간의 결합(정합) 시 시각적인 피드백과 생동감을 주기 위해 와이어가 움직이는 애니메이션 효과를
+                                        부여했습니다. 필요에 따라 애니메이션의 On/Off 전환 및 속도 조절이 가능하도록 프로퍼티를 구성했습니다.</p>
+                                </div>
+                                <div class="card-video-container">
+                                    <video class="card-video" muted loop playsinline>
+                                        <source src="Effect/Wire_Video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2025.12</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
                     <div class="col" data-link="https://www.artstation.com/artwork/gRXK0K">
                         <div class="card h-100 project-card">
                             <img src="Effect/Rift_thumbnail.jpg" class="card-img-top" alt="Space Rift Effect">
@@ -585,7 +675,7 @@
                                 <p class="card-text-tools">Tools: Unity 6, Shader Graph, Render Objects</p>
                                 <div class="card-text">
                                     <div class="card-video-container">
-                                        <video class="card-video" autoplay loop playsinline>
+                                        <video class="card-video" autoplay loop muted playsinline>
                                             <source src="Effect/Rift_Video.mp4" type="video/mp4">
                                         </video>
                                     </div>
@@ -622,13 +712,13 @@
                                 <p class="card-text-tools">Tools: Unity 6, Visual Effect Graph, C# Script</p>
                                 <div class="card-text">
                                     <div class="card-video-container">
-                                        <video class="card-video" autoplay loop playsinline>
+                                        <video class="card-video" autoplay loop muted playsinline>
                                             <source src="Effect/Aura_Video.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                     <br>
                                     <p>몬스터의 몸체에 검은 이펙트가 생성되게 하는 VFX Graph를 제작했습니다.</p>
-                                    <img src="Effect/Aura_Shader.jpg" class="card-img-top" alt="Game">
+                                    <img src="Effect/Aura_VFX.jpg" class="card-img-top" alt="Game">
                                     <p>Skinned Mesh를 프로퍼티로 받아와서 해당 Mesh 형태로 파티클을 생성했습니다.</p>
                                     <img src="Effect/Aura_Script.jpg" class="card-img-top" alt="Game">
                                     <p>스크립트로 일정 주기마다 Skinned Mesh Renderer를 Mesh로 변환, 캡쳐해서 VFX Graph에 반환했습니다.</p>
@@ -660,13 +750,13 @@
                                 <p class="card-text-tools">Tools: Unity 6, Visual Effect Graph, C# Script</p>
                                 <div class="card-text">
                                     <div class="card-video-container">
-                                        <video class="card-video" autoplay loop playsinline>
+                                        <video class="card-video" autoplay loop muted playsinline>
                                             <source src="Effect/Death_Video.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                     <br>
                                     <p>기존에 제작한 Aura 이펙트를 응용해서, 특정 타이밍에 Mesh를 캡쳐하여 이펙트로 활용했습니다.</p>
-                                    <img src="Effect/Death_Shader.jpg" class="card-img-top" alt="Game">
+                                    <img src="Effect/Death_VFX.jpg" class="card-img-top" alt="Game">
                                     <p>1. Skinned Mesh를 프로퍼티로 받아와서 해당 Mesh 형태로 반투명한 메쉬를 생성했습니다.</p>
                                     <p>2. 추가적으로 Skinned Mesh의 위치와 Surface를 기반으로 사각 이펙트들을 생성했습니다.</p>
                                     <img src="Effect/Death_Script.jpg" class="card-img-top" alt="Game">
@@ -701,12 +791,12 @@
                                 <p class="card-text-tools">Tools: Unity 6, Visual Effect Graph, Shader Graph</p>
                                 <div class="card-text">
                                     <div class="card-video-container">
-                                        <video class="card-video" autoplay loop playsinline>
+                                        <video class="card-video" autoplay loop muted playsinline>
                                             <source src="Effect/Portal_Video.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                     <br>
-                                    <img src="Effect/Portal_Shader.jpg" class="card-img-top" alt="Game">
+                                    <img src="Effect/Portal_VFX.jpg" class="card-img-top" alt="Game">
                                     <p>여러 VFX Graph를 배치하고 지속할 이펙트와 루프 생성될 이펙트를 구분해서 제작해보았습니다.</p>
                                     <p>포탈 중심의 회전하는 파티클과 외곽의 에너지 링을 조합하여 몰입감 있는 포탈 연출을 완성했습니다.</p>
                                 </div>
