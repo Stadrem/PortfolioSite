@@ -574,6 +574,135 @@
                 <div data-aos="fade-left">
                     <div class="col" data-link="">
                         <div class="card h-100 project-card">
+                            <img src="Effect/Flower_thumbnail.jpg" class="card-img-top" alt="Flower Footstep Effect">
+                            <div class="tool-icons">
+                                <tool-icon tool="unity"></tool-icon>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Flower Footstep</h4>
+                                <p class="card-summary">VFX Graph의 GPU Event를 활용한 2차 발생 발자국 이펙트</p>
+                                <h5 class="card-title">사내 프로젝트</h5>
+                                <p class="card-text-tools">Tools: Unity 6, Visual Effect Graph</p>
+                                <div class="card-text">
+                                    <div class="card-video-container">
+                                        <video class="card-video" autoplay loop muted playsinline>
+                                            <source src="Effect/Flower_Video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <br>
+                                    <p>유니티의 Visual Effect Graph(VFX)와 GPU Event를 활용하여, 메인 파티클이 소멸할 때 2차 이펙트가 발생하는 발자국
+                                        이펙트를 구현했습니다.</p>
+                                    <img src="Effect/Flower_VFX.jpg" class="card-img-top" alt="VFX Graph">
+                                    <p>파티클에 로컬 좌표계 기준 뒤쪽(Back) 방향으로 속도(Velocity)를 부여하여 오브젝트가 이동할 때 자연스럽게 밀려나는 움직임을
+                                        만들었습니다. 이후 해당 파티클의 수명(Lifetime)이 끝나는 시점에 GPU Event를 발생시켜 꽃잎이 흩날리는 2차 이펙트를
+                                        연출했습니다.</p>
+                                    <br>
+                                    <p>그 외에 라인 렌더러(Line Renderer)를 사용하여 움직임의 궤적을 시각적으로 그려내었으며, 연출의 마무리 부분에서는 이펙트를 재활용하여
+                                        순간적으로 다수의 파티클을 동시에 생성하는 방식으로 화려함을 강조했습니다.</p>
+                                </div>
+                                <div class="card-video-container">
+                                    <video class="card-video" muted loop playsinline>
+                                        <source src="Effect/Flower_Video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2026.06</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="col" data-link="">
+                        <div class="card h-100 project-card">
+                            <img src="Effect/ARPopup_thumbnail.jpg" class="card-img-top" alt="AR PopUp Effect">
+                            <div class="tool-icons">
+                                <tool-icon tool="unity"></tool-icon>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">AR Pop-Up</h4>
+                                <p class="card-summary">Shader Graph와 Script를 활용한 순차적 팝업 및 라인 연결 이펙트</p>
+                                <h5 class="card-title">사내 프로젝트</h5>
+                                <p class="card-text-tools">Tools: Unity 6, Shader Graph, C#</p>
+                                <div class="card-text">
+                                    <div class="card-video-container">
+                                        <video class="card-video" autoplay loop muted playsinline>
+                                            <source src="Effect/ARPopup_Video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <br>
+                                    <p>여러 개의 분리된 오브젝트들이 아래에서 위로 순차적으로 나타나는 AR 형태의 팝업 이펙트를 구현했습니다.</p>
+                                    <img src="Effect/ARPopup_Shader.jpg" class="card-img-top" alt="Shader Graph">
+                                    <p>쉐이더 그래프를 활용하여 특정 Y축 좌표를 기준으로 아래쪽은 디더링(Dithering)으로 잘라내어 보이지 않게 처리했습니다. 오브젝트가 위로
+                                        이동함에 따라 서서히 나타나며, 나타나는 경계선 부분에 밝은 빛(Emission) 이펙트를 추가하여 빛에서부터 생성되는 듯한 연출을 주었습니다.
+                                    </p>
+                                    <br>
+                                    <img src="Effect/ARPopup_Script.jpg" class="card-img-top" alt="Script">
+                                    <p>스크립트를 통해 여러 오브젝트들의 등장 및 퇴장 순서를 정교하게 제어합니다. 지정된 시간 뒤에 차례대로 사라지게 할 뿐만 아니라, 특정 시간
+                                        주기마다 하나의 오브젝트를 강조(색상 및 크기 변화)하는 부가 기능도 포함되어 있습니다.</p>
+                                    <br>
+                                    <img src="Effect/ARPopup_Script_Line.jpg" class="card-img-top" alt="Script Line">
+                                    <p>추가적으로 Line Renderer와 연동하는 스크립트를 작성하여, 약간 떨어져 있는 월드 캔버스와 메쉬 사이를 시각적으로 이어주는 라인 연결
+                                        기능을 구현했습니다.</p>
+                                </div>
+                                <div class="card-video-container">
+                                    <video class="card-video" muted loop playsinline>
+                                        <source src="Effect/ARPopup_Video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2026.06</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="col" data-link="">
+                        <div class="card h-100 project-card">
+                            <img src="Effect/FadeInOut_thumbnail.jpg" class="card-img-top" alt="Fade In Out Effect">
+                            <div class="tool-icons">
+                                <tool-icon tool="unity"></tool-icon>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">Fade in Fade Out</h4>
+                                <p class="card-summary">Shader Graph와 Script를 활용한 페이드 인 아웃 이펙트 구현</p>
+                                <h5 class="card-title">사내 프로젝트</h5>
+                                <p class="card-text-tools">Tools: Unity 6, Shader Graph, C#</p>
+                                <div class="card-text">
+                                    <div class="card-video-container">
+                                        <video class="card-video" autoplay loop muted playsinline>
+                                            <source src="Effect/FadeInOut_Video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <br>
+                                    <p>쉐이더 그래프를 활용하여 오브젝트가 자연스럽게 나타나고 사라지는 페이드 인/아웃 효과를 구현했습니다.</p>
+                                    <img src="Effect/FadeInOut_Shader.jpg" class="card-img-top" alt="Shader Graph">
+                                    <p>모바일 디바이스 환경에서의 성능 최적화를 위해 디더링(Dithering) 기법을 적용하였으며, URP 환경에 맞춘 커스텀 세팅을 통해 다양한
+                                        메테리얼에 범용적으로 적용할 수 있도록 설계했습니다.</p>
+                                    <br>
+                                    <img src="Effect/FadeInOut_Script.jpg" class="card-img-top" alt="Script">
+                                    <p>또한, 외부 스크립트에서 제어할 수 있는 프로퍼티를 노출하여, 오브젝트의 등장 타이밍에 맞춰 게이지가 자연스럽게 증감하며 이펙트가 동작하도록
+                                        구현했습니다.</p>
+                                </div>
+                                <div class="card-video-container">
+                                    <video class="card-video" muted loop playsinline>
+                                        <source src="Effect/FadeInOut_Video.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary">2026.06</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="col" data-link="">
+                        <div class="card h-100 project-card">
                             <img src="Effect/LineDraw_thumbnail.jpg" class="card-img-top" alt="Line Draw Effect">
                             <div class="tool-icons">
                                 <tool-icon tool="unity"></tool-icon>
