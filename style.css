@@ -830,6 +830,29 @@ footer {
     color: var(--text-muted) !important;
 }
 
+.career-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    color: #ffffff !important;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 8px rgba(124, 106, 239, 0.2);
+}
+
+.career-link-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px var(--accent-glow);
+    color: #ffffff !important;
+}
+
 @media (max-width: 768px) {
     #careerModal .modal-body {
         padding: 12px 10px;
@@ -842,6 +865,11 @@ footer {
     .custom-career-table th,
     .custom-career-table td {
         padding: 0.4rem 0.25rem !important;
+    }
+
+    .career-link-btn {
+        padding: 2px 8px;
+        font-size: 0.7rem;
     }
 }
 
