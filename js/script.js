@@ -205,7 +205,20 @@ function handleHashChange() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', handleHashChange);
+document.addEventListener('DOMContentLoaded', () => {
+    handleHashChange();
+    document.querySelectorAll('.nav-anchor-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && hashToSectionMap[href]) {
+                if (window.location.hash === href) {
+                    e.preventDefault();
+                    handleHashChange();
+                }
+            }
+        });
+    });
+});
 window.addEventListener('hashchange', handleHashChange);
 
 // Video hover autoplay for effect cards

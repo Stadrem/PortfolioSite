@@ -41,12 +41,23 @@
 <body>
     <!-- 상단 헤더-->
     <header class="mytitle">
-        <h1>3D Modeling Portfolio</h1>
-        <nav class="buttons">
-            <button id="showCareerBtn">프로젝트 경력</button>
-            <button onclick="window.open('https://www.artstation.com/stadrem')">Artstation</button>
-            <button onclick="window.open('https://blog.naver.com/0ddomobb0')">Blog</button>
-            <button onclick="window.open('https://github.com/Stadrem')">Github</button>
+        <h1>Stylized Visuals & <span class="accent-text">Technical Realization</span></h1>
+        <p class="hero-subtitle">3D Character Modeler & Technical Artist 김동수</p>
+
+        <!-- 섹션 앵커 바로가기 네비게이션 -->
+        <nav class="nav-sections">
+            <a href="#game" class="nav-anchor-btn">Make a Game</a>
+            <a href="#modeling" class="nav-anchor-btn">Character</a>
+            <a href="#effect" class="nav-anchor-btn">Effect & Shader</a>
+            <a href="#etc" class="nav-anchor-btn">ETC</a>
+            <button id="showCareerBtn" class="nav-career-btn">프로젝트 경력</button>
+        </nav>
+
+        <!-- 외부 프로필 링크 -->
+        <nav class="nav-external-links">
+            <a href="https://www.artstation.com/stadrem" target="_blank" rel="noopener noreferrer">Artstation ↗</a>
+            <a href="https://blog.naver.com/0ddomobb0" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+            <a href="https://github.com/Stadrem" target="_blank" rel="noopener noreferrer">Github ↗</a>
         </nav>
         <div class="header_icon">
             <img src="img/icon_blender.png" alt="Blender" title="Blender 5.x" height="40">
@@ -135,15 +146,15 @@
                                 <p class="card-text-tools">Tools: Unity 6, Blender, Substance Painter</p>
                                 <div class="card-text">
                                     <p>
-                                    <div style="display: flex; justify-content: center; align-items: center;">
+                                    <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 16px;">
                                         <a href="https://store.steampowered.com/app/3985500/Irian_City_of_ruin/"
                                             target="_blank"
-                                            style="background: linear-gradient(135deg, #7c6aef, #4f8fff); color: white; padding: 6px 16px; border-radius: 10px; text-decoration: none; margin-right: calc(2 * 80px); margin-bottom: 15px; text-align: center; font-size: 0.85rem; font-weight: 500;">스팀
+                                            style="background: linear-gradient(135deg, #7c6aef, #4f8fff); color: white; padding: 6px 18px; border-radius: 10px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 500;">스팀
                                             링크</a>
 
                                         <a href="https://docs.google.com/presentation/d/1AZgOl_egRmAChPZzWufiyUpXezjsHoAV/edit?usp=drive_link&ouid=102614391910378620983&rtpof=true&sd=true"
                                             target="_blank"
-                                            style="background: linear-gradient(135deg, #7c6aef, #4f8fff); color: white; padding: 6px 16px; border-radius: 10px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 500;">기획서</a>
+                                            style="background: linear-gradient(135deg, #7c6aef, #4f8fff); color: white; padding: 6px 18px; border-radius: 10px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 500;">기획서</a>
                                     </div>
                                     </p>
                                     <p>24년 12월부터 게임 개발 비경험자들로 구성해서 사이드 프로젝트로 제작한 게임입니다. 어반 판타지 테마의 로그라이크 3D 액션
