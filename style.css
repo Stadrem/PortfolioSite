@@ -908,6 +908,14 @@ footer {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.career-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .career-card-title-group {
     flex: 1;
 }
