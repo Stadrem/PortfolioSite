@@ -1,21 +1,65 @@
-// 프로젝트 경력 모달 띄우기 (외부의 career.html 파일 불어오기)
-$(document).ready(function () {
-    $('#showCareerBtn').click(function () {
-        if ($('#careerModal').length === 0) {
-            $('#careerModalContainer').load('career.html', function (response, status, xhr) {
-                if (status == "error") {
-                    console.error("경력사항 데이터를 불러오는데 실패했습니다: " + xhr.status + " " + xhr.statusText);
-                    return;
-                }
-                const careerModal = new bootstrap.Modal(document.getElementById('careerModal'));
-                careerModal.show();
-            });
-        } else {
-            let careerModal = bootstrap.Modal.getInstance(document.getElementById('careerModal'));
-            if (!careerModal) careerModal = new bootstrap.Modal(document.getElementById('careerModal'));
-            careerModal.show();
+// 프로젝트 경력 모달 띄우기 (외부의 career.html 파일 불어오기 및 #career 해시 지원)
+function setupCareerModalEvents() {
+    const modalEl = document.getElementById('careerModal');
+    if (!modalEl || modalEl.dataset.eventsBound) return;
+    modalEl.dataset.eventsBound = 'true';
+
+    // 모달이 닫힐 때 URL 해시가 #career면 주소창에서 깔끔하게 해시 제거
+    modalEl.addEventListener('hidden.bs.modal', function () {
+        if (window.location.hash === '#career') {
+            history.replaceState(null, document.title, window.location.pathname + window.location.search);
         }
     });
+}
+
+function openCareerModal() {
+    function showModal() {
+        const modalEl = document.getElementById('careerModal');
+        if (!modalEl) return;
+        let careerModal = bootstrap.Modal.getInstance(modalEl);
+        if (!careerModal) careerModal = new bootstrap.Modal(modalEl);
+        careerModal.show();
+    }
+
+    if ($('#careerModal').length === 0) {
+        $('#careerModalContainer').load('career.html', function (response, status, xhr) {
+            if (status === "error") {
+                console.error("경력사항 데이터를 불러오는데 실패했습니다: " + xhr.status + " " + xhr.statusText);
+                return;
+            }
+            setupCareerModalEvents();
+            showModal();
+        });
+    } else {
+        showModal();
+    }
+}
+
+function handleCareerHash() {
+    if (window.location.hash === '#career') {
+        openCareerModal();
+    } else {
+        const modalEl = document.getElementById('careerModal');
+        if (modalEl) {
+            const careerModal = bootstrap.Modal.getInstance(modalEl);
+            if (careerModal) careerModal.hide();
+        }
+    }
+}
+
+$(document).ready(function () {
+    $('#showCareerBtn').on('click', function (e) {
+        e.preventDefault();
+        if (window.location.hash === '#career') {
+            openCareerModal();
+        } else {
+            window.location.hash = 'career';
+        }
+    });
+
+    // 페이지 진입 시 #career 해시가 있으면 모달 자동 열기
+    handleCareerHash();
+    window.addEventListener('hashchange', handleCareerHash);
 });
 
 // 명함 뒤집기 기능
