@@ -192,6 +192,7 @@ document.querySelectorAll('.section-toggle').forEach(toggle => {
         if (!content) return;
 
         const isCollapsed = this.classList.contains('collapsed');
+        this.setAttribute('aria-expanded', String(isCollapsed));
 
         if (isCollapsed) {
             // Open
@@ -209,6 +210,7 @@ document.querySelectorAll('.section-toggle').forEach(toggle => {
 const hashToSectionMap = {
     '#game': 'gmContent',
     '#modeling': 'cmContent',
+    '#animation': 'anContent',
     '#effect': 'efContent',
     '#etc': 'etcContent'
 };
@@ -229,6 +231,7 @@ function handleHashChange() {
     document.querySelectorAll('.section-toggle').forEach(toggle => {
         if (toggle.dataset.target !== targetId) {
             toggle.classList.add('collapsed');
+            toggle.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -239,13 +242,14 @@ function handleHashChange() {
     if (targetContent && targetToggle) {
         targetContent.classList.remove('collapsed');
         targetToggle.classList.remove('collapsed');
+        targetToggle.setAttribute('aria-expanded', 'true');
 
         // Scroll to the toggle slightly offset for header
         setTimeout(() => {
             const yOffset = -20;
             const targetPosition = targetToggle.getBoundingClientRect().top + window.scrollY + yOffset;
             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }, 100);
+        }, 650);
     }
 }
 
