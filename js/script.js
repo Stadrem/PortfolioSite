@@ -301,4 +301,12 @@ class ToolIcon extends HTMLElement {
         }
     }
 }
-customElements.define('tool-icon', ToolIcon);
+customElements.define('tool-icon', ToolIcon);
+
+// 첫 화면의 작품 버튼은 기존 상세 모달을 공유합니다.
+document.querySelectorAll('[data-project-image]').forEach(button => {
+    button.addEventListener('click', () => {
+        const image = document.querySelector(`.project-card img[src="${button.dataset.projectImage}"]`);
+        if (image) image.closest('.project-card').click();
+    });
+});

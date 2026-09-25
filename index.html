@@ -39,84 +39,56 @@
 </head>
 
 <body>
-    <!-- 상단 헤더-->
-    <header class="mytitle">
-        <h1>Stylized Visuals & <span class="accent-text">Technical Realization</span></h1>
-        <p class="hero-subtitle">3D Character Modeler & Technical Artist 김동수</p>
-
-        <!-- 섹션 앵커 바로가기 네비게이션 -->
-        <nav class="nav-sections">
-            <a href="#game" class="nav-anchor-btn">Make a Game</a>
-            <a href="#modeling" class="nav-anchor-btn">Character</a>
-            <a href="#effect" class="nav-anchor-btn">Effect & Shader</a>
-            <a href="#etc" class="nav-anchor-btn">ETC</a>
-            <a href="#career" id="showCareerBtn" class="nav-career-btn">프로젝트 경력</a>
-        </nav>
-
-        <!-- 외부 프로필 링크 -->
-        <nav class="nav-external-links">
-            <a href="https://www.artstation.com/stadrem" target="_blank" rel="noopener noreferrer">Artstation ↗</a>
-            <a href="https://blog.naver.com/0ddomobb0" target="_blank" rel="noopener noreferrer">Blog ↗</a>
-            <a href="https://github.com/Stadrem" target="_blank" rel="noopener noreferrer">Github ↗</a>
-        </nav>
-        <div class="header_icon">
-            <img src="img/icon_blender.png" alt="Blender" title="Blender 5.x" height="40">
-            <img src="img/icon_max.png" alt="3ds Max" title="3ds Max 2020" height="40">
-            <img src="img/icon_zbrush.png" alt="Zbrush" title="Zbrush 2020" height="40">
-            <img src="img/icon_unity.png" alt="Unity" title="Unity 6" height="40">
-            <img src="img/icon_substance.png" alt="Substance Painter" title="Substance Painter 2021" height="40">
-            <img src="img/icon_photoshop.png" alt="Photoshop" title="Photoshop CC" height="40">
-            <img src="img/icon_krita.png" alt="Krita" title="Krita 5" height="40">
-            <img src="img/icon_davinci.png" alt="Davinci resolve" title="Davinci resolve 19" height="40">
-            <img src="img/icon_antigravity.png" alt="Google Antigravity" title="Google Antigravity" height="40">
+    <!-- 작품 중심 소개 -->
+    <header class="portfolio-hero">
+        <div class="hero-topline">
+            <span class="hero-brand">김동수 <span>PORTFOLIO</span></span>
+            <a href="#career" id="showCareerBtn" class="nav-career-btn">프로젝트 경력 <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="header_icon2">
-            <strong>ETC:</strong> Marvelous Designer, Marmoset, Github Desktop, C#, Visual Studio Code, Notion, Figma,
-            Coda, Trello.
+        <div class="hero-layout">
+            <div class="hero-copy">
+                <p class="hero-eyebrow">3D CHARACTER · SHADER · VFX</p>
+                <h1>캐릭터를 만들고,<br><span>게임 속에 구현합니다.</span></h1>
+                <p class="hero-intro">스타일라이즈 캐릭터 모델링을 중심으로<br class="hero-desktop-break"> 텍스처링·리깅부터 Unity 셰이더와 VFX까지 작업합니다.</p>
+                <p class="hero-role">김동수 <span>3D Character Modeler & Technical Artist</span></p>
+                <nav class="hero-actions" aria-label="주요 작업 살펴보기">
+                    <a href="#modeling" class="nav-anchor-btn hero-primary">캐릭터 작업 보기 <span aria-hidden="true">↗</span></a>
+                    <a href="#effect" class="nav-anchor-btn">셰이더 & VFX 보기 <span aria-hidden="true">↗</span></a>
+                </nav>
+                <nav class="nav-external-links" aria-label="외부 포트폴리오">
+                    <a href="https://www.artstation.com/stadrem" target="_blank" rel="noopener noreferrer">ArtStation ↗</a>
+                    <a href="https://blog.naver.com/0ddomobb0" target="_blank" rel="noopener noreferrer">Blog ↗</a>
+                    <a href="https://github.com/Stadrem" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </nav>
+            </div>
+            <div class="hero-gallery" aria-label="캐릭터 작업 미리보기">
+                <button type="button" class="hero-work hero-work-main" data-project-image="img/014.jpg" aria-label="Guardian Saeryeon 작업 상세 보기">
+                    <img src="img/014.jpg" alt="금발과 안경을 쓴 스타일라이즈 캐릭터 Guardian Saeryeon" width="362" height="248" fetchpriority="high">
+                    <span class="hero-work-caption"><span><small>CHARACTER MODELING</small>Guardian Saeryeon</span><span aria-hidden="true">↗</span></span>
+                </button>
+                <button type="button" class="hero-work" data-project-image="img/013.jpg" aria-label="Adventurer Altair 작업 상세 보기">
+                    <img src="img/013.jpg" alt="갑옷을 입은 모험가 캐릭터 Adventurer Altair" width="362" height="248">
+                    <span class="hero-work-caption"><span>Adventurer Altair</span><span aria-hidden="true">↗</span></span>
+                </button>
+                <button type="button" class="hero-work" data-project-image="img/005.jpg" aria-label="Haro 작업 상세 보기">
+                    <img src="img/005.jpg" alt="셀 셰이딩으로 표현한 검은 머리 캐릭터 Haro" width="362" height="248">
+                    <span class="hero-work-caption"><span>Haro</span><span aria-hidden="true">↗</span></span>
+                </button>
+            </div>
         </div>
+        <nav class="hero-section-nav" aria-label="전체 작업 카테고리">
+            <span class="hero-nav-label">EXPLORE WORK</span>
+            <div class="nav-sections">
+                <a href="#modeling" class="nav-anchor-btn">Character</a>
+                <a href="#effect" class="nav-anchor-btn">Shader & VFX</a>
+                <a href="#game" class="nav-anchor-btn">Game Projects</a>
+                <a href="#etc" class="nav-anchor-btn">Other Works</a>
+            </div>
+        </nav>
     </header>
-    <!-- 상단 헤더 끝-->
 
     <main>
-        <!--자기소개 명함-->
-        <article class="about">
-            <section class="business-card-section">
-                <div class="business-card" id="businessCard">
-                    <div class="card-inner">
-                        <!-- 앞면 -->
-                        <div class="card-front">
-                            <div class="profile-container">
-                                <img src="img/profile.png" class="card-profile-img" alt="프로필 사진">
-                            </div>
-                            <div class="card-info">
-                                <h2 class="card-name">김동수</h2>
-                                <p class="card-title">3D Character Modeler</p>
-                                <p class="card-email">stadrem@naver.com</p>
-                            </div>
-                            <div class="click-hint">Click</div>
-                        </div>
 
-                        <!-- 뒷면 -->
-                        <div class="card-back">
-                            <div class="card-content">
-                                <h3>About Me</h3>
-                                <p><strong>5년 이상</strong>의 3D 모델링 경험을 바탕으로 게임 스타일의 캐릭터 모델링을 전문으로 하며,
-                                    현재는 스타일라이즈, 셀 쉐이딩 기반 비주얼을 주로 다룹니다.<br></p>
-
-                                <ul class="card-details">
-                                    <li>⚔️ <strong>전문 분야:</strong> 3D 캐릭터 모델링, 텍스처링, 리깅</li>
-                                    <li>🎨 <strong>선호 스타일:</strong> 판타지, 애니메이션, 반실사</li>
-                                    <li>🎮 <strong>선호 게임:</strong> 페르소나, 아틀리에, WoW, 원신</li>
-                                    <li>🧭 <strong>목표:</strong> 테크니컬 아티스트 겸 게임 크리에이터</li>
-                                </ul>
-                            </div>
-                            <div class="click-hint">Click</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </article>
-        <!--자기소개 명함 끝-->
 
         <!--게임 제작 항목-->
         <div class="section">
@@ -1025,6 +997,62 @@
             <button type="button" id="topBtn" class="btn btn-primary" onclick="scrollToTop()"
                 title="Go to top">Top</button>
         </div>
+        <!--자기소개 명함-->
+        <article class="about">
+            <section class="business-card-section">
+                <div class="business-card" id="businessCard">
+                    <div class="card-inner">
+                        <!-- 앞면 -->
+                        <div class="card-front">
+                            <div class="profile-container">
+                                <img src="img/profile.png" class="card-profile-img" alt="프로필 사진">
+                            </div>
+                            <div class="card-info">
+                                <h2 class="card-name">김동수</h2>
+                                <p class="card-title">3D Character Modeler</p>
+                                <p class="card-email">stadrem@naver.com</p>
+                            </div>
+                            <div class="click-hint">Click</div>
+                        </div>
+
+                        <!-- 뒷면 -->
+                        <div class="card-back">
+                            <div class="card-content">
+                                <h3>About Me</h3>
+                                <p><strong>5년 이상</strong>의 3D 모델링 경험을 바탕으로 게임 스타일의 캐릭터 모델링을 전문으로 하며,
+                                    현재는 스타일라이즈, 셀 쉐이딩 기반 비주얼을 주로 다룹니다.<br></p>
+
+                                <ul class="card-details">
+                                    <li>⚔️ <strong>전문 분야:</strong> 3D 캐릭터 모델링, 텍스처링, 리깅</li>
+                                    <li>🎨 <strong>선호 스타일:</strong> 판타지, 애니메이션, 반실사</li>
+                                    <li>🎮 <strong>선호 게임:</strong> 페르소나, 아틀리에, WoW, 원신</li>
+                                    <li>🧭 <strong>목표:</strong> 테크니컬 아티스트 겸 게임 크리에이터</li>
+                                </ul>
+                            </div>
+                            <div class="click-hint">Click</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <details class="about-tools"><summary>사용 도구 전체 보기</summary>
+        <div class="header_icon">
+            <img src="img/icon_blender.png" alt="Blender" title="Blender 5.x" height="40">
+            <img src="img/icon_max.png" alt="3ds Max" title="3ds Max 2020" height="40">
+            <img src="img/icon_zbrush.png" alt="Zbrush" title="Zbrush 2020" height="40">
+            <img src="img/icon_unity.png" alt="Unity" title="Unity 6" height="40">
+            <img src="img/icon_substance.png" alt="Substance Painter" title="Substance Painter 2021" height="40">
+            <img src="img/icon_photoshop.png" alt="Photoshop" title="Photoshop CC" height="40">
+            <img src="img/icon_krita.png" alt="Krita" title="Krita 5" height="40">
+            <img src="img/icon_davinci.png" alt="Davinci resolve" title="Davinci resolve 19" height="40">
+            <img src="img/icon_antigravity.png" alt="Google Antigravity" title="Google Antigravity" height="40">
+        </div>
+        <div class="header_icon2">
+            <strong>ETC:</strong> Marvelous Designer, Marmoset, Github Desktop, C#, Visual Studio Code, Notion, Figma,
+            Coda, Trello.
+        </div>
+            </details>
+        </article>
+        <!--자기소개 명함 끝-->
     </main>
 
     <footer class="footer">

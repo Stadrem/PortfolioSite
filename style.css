@@ -1281,3 +1281,79 @@ footer {
         min-height: 240px;
     }
 }
+
+/* ===== Portfolio introduction ===== */
+.portfolio-hero {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    padding: 28px 0 0;
+}
+.hero-topline, .hero-work-caption, .hero-section-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.hero-brand { font-weight: 600; font-size: 1rem; }
+.hero-brand span { margin-left: 12px; font-size: .65rem; letter-spacing: .16em; color: #aaaabb; }
+.hero-topline .nav-career-btn { gap: 14px; }
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: clamp(28px, 5vw, 72px);
+    padding: 44px 0;
+}
+.hero-copy { min-width: 0; }
+.hero-eyebrow { font-size: .72rem; font-weight: 600; letter-spacing: .16em; color: #b5a9f5; margin-bottom: 24px; }
+.hero-copy h1 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); line-height: 1.4; letter-spacing: -.055em; margin: 0 0 22px; word-break: keep-all; }
+.hero-copy h1 span { color: #c4b9fa; }
+.hero-intro { font-size: .95rem; color: #b2b2c0; line-height: 1.9; word-break: keep-all; }
+.hero-role { margin: 24px 0 28px; font-size: .9rem; }
+.hero-role span { display: block; margin-top: 4px; font-size: .75rem; color: #aaaabb; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero-actions .nav-anchor-btn { border-radius: 10px; padding: 12px 16px; gap: 16px; }
+.hero-actions .hero-primary { background: #aa97f3; border-color: #aa97f3; color: #171020; font-weight: 700; }
+.hero-actions .hero-primary:hover { background: #c0afff; color: #171020; }
+.hero-copy .nav-external-links { justify-content: flex-start; margin: 22px 0 0; gap: 20px; }
+.hero-copy .nav-external-links a { padding: 4px 0; color: #aaaabb; }
+.hero-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; min-width: 0; }
+.hero-work { display: block; width: 100%; min-width: 0; padding: 0; overflow: hidden; background: #18181f; border: 1px solid #33313e; border-radius: 12px; color: #e8e8ed; text-align: left; cursor: pointer; transition: border-color .2s, transform .2s; }
+.hero-work:hover { border-color: #aa97f3; transform: translateY(-3px); }
+.hero-work-main { grid-column: 1 / -1; }
+.hero-work img { display: block; width: 100%; height: auto; aspect-ratio: 362 / 248; object-fit: contain; }
+.hero-work-main img { max-height: 260px; background: #121218; }
+.hero-work-caption { padding: 12px 14px; gap: 8px; font-size: .75rem; }
+.hero-work-caption small { display: block; font-size: .6rem; letter-spacing: .12em; color: #b8acf3; margin-bottom: 3px; }
+.hero-work-main .hero-work-caption { font-size: .9rem; }
+.hero-section-nav { padding: 20px 0; border-top: 1px solid #2a2835; border-bottom: 1px solid #2a2835; }
+.hero-nav-label { color: #aaaabb; font-size: .65rem; letter-spacing: .14em; white-space: nowrap; }
+.hero-section-nav .nav-sections { margin: 0; padding: 0; justify-content: flex-end; }
+.portfolio-hero a:focus-visible, .hero-work:focus-visible, .about-tools summary:focus-visible { outline: 3px solid #c4b9fa; outline-offset: 4px; }
+.about-tools { max-width: 680px; margin-top: 12px; }
+.about-tools summary { cursor: pointer; color: #b2b2c0; font-size: .85rem; }
+.about-tools .header_icon2 { color: #aaaabb; opacity: 1; }
+@media (max-width: 900px) {
+    .hero-layout { gap: 24px; grid-template-columns: 1fr 1fr; }
+    .hero-desktop-break { display: none; }
+    .hero-section-nav { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .hero-section-nav .nav-sections { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+    .portfolio-hero { width: calc(100% - 32px); padding-top: 20px; }
+    .hero-brand span { display: block; margin: 3px 0 0; font-size: .55rem; }
+    .hero-topline .nav-career-btn { font-size: .75rem; }
+    .hero-layout { grid-template-columns: 1fr; padding: 32px 0 24px; gap: 28px; }
+    .hero-eyebrow { margin-bottom: 14px; font-size: .62rem; }
+    .hero-copy h1 { font-size: clamp(1.65rem, 6.5vw, 2.5rem); margin-bottom: 14px; }
+    .hero-intro { font-size: .85rem; }
+    .hero-role { margin: 16px 0 20px; }
+    .hero-actions .nav-anchor-btn { font-size: .75rem; padding: 11px 12px; gap: 8px; }
+    .hero-copy .nav-external-links { margin-top: 16px; }
+    .hero-work-main img { max-height: none; }
+    .hero-section-nav .nav-anchor-btn { font-size: .72rem; padding: 8px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-work, .portfolio-hero a { transition: none; }
+    .hero-work:hover, .portfolio-hero a:hover { transform: none; }
+}
