@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', function (e) {
             // 카드 내부 링크 클릭은 모달 열지 않음
-            if (e.target.closest('a')) return;
+            if (e.target.closest('a, video, button')) return;
 
             const col = this.closest('.col');
             const link = col ? col.dataset.link : '';
@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 modalLink.style.display = 'none';
             }
 
+            setupAddonVideos(modalDescription);
+
             // Show modal
             const modal = new bootstrap.Modal(document.getElementById('projectModal'));
             modal.show();
@@ -212,6 +214,7 @@ const hashToSectionMap = {
     '#modeling': 'cmContent',
     '#animation': 'anContent',
     '#effect': 'efContent',
+    '#addons': 'addonContent',
     '#etc': 'etcContent'
 };
 
@@ -313,4 +316,28 @@ document.querySelectorAll('[data-project-image]').forEach(button => {
         const image = document.querySelector(`.project-card img[src="${button.dataset.projectImage}"]`);
         if (image) image.closest('.project-card').click();
     });
+});
+
+// 애드온 영상은 source를 연결한 뒤 로드가 완료되면 준비 안내를 대체합니다.
+function setupAddonVideos(root = document) {
+    root.querySelectorAll('.addon-video-slot').forEach(slot => {
+        const video = slot.querySelector('video');
+        if (!video || !video.querySelector('source[src]')) return;
+        video.addEventListener('loadeddata', () => slot.classList.add('has-video'));
+        video.addEventListener('error', () => slot.classList.remove('has-video'));
+        video.load();
+    });
+}
+setupAddonVideos();
+
+document.querySelectorAll('.addon-card').forEach(card => {
+    card.addEventListener('keydown', event => {
+        if (event.target !== card || !['Enter', ' '].includes(event.key)) return;
+        event.preventDefault();
+        card.click();
+    });
+});
+
+document.getElementById('projectModal').addEventListener('hidden.bs.modal', () => {
+    document.querySelectorAll('#projectModal .addon-video-slot video').forEach(video => video.pause());
 });
