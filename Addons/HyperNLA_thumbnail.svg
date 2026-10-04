@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Hyper NLA Exporter</title>
+  <desc id="desc">Timeline markers split Walk and Run clips for FBX and GLB export. Workflow illustration.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#292044"/><stop offset="1" stop-color="#121020"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g font-family="Arial, sans-serif">
+    <text x="36" y="43" fill="#bfb0f7" font-size="12" letter-spacing="3">BLENDER · ANIMATION WORKFLOW</text>
+    <text x="36" y="88" fill="#f5f1ff" font-size="32" font-weight="700">Hyper NLA Exporter</text>
+    <text x="36" y="116" fill="#b2a9c5" font-size="15">Timeline markers → Animation clips</text>
+    <rect x="36" y="153" width="568" height="113" rx="12" fill="#161222" stroke="#55456f"/>
+    <path d="M58 223H582" stroke="#6b5c83"/>
+    <g fill="#a499b7" font-size="12"><text x="58" y="245">1</text><text x="311" y="245">60</text><text x="557" y="245">120</text></g>
+    <rect x="58" y="189" width="263" height="25" rx="4" fill="#8c71dc"/>
+    <rect x="328" y="189" width="254" height="25" rx="4" fill="#527f95"/>
+    <path d="M321 170V223M582 170V223" stroke="#ddd2f6" stroke-dasharray="3 3"/>
+    <g fill="#f5f1ff" font-size="13" font-weight="700"><text x="70" y="207">Walk</text><text x="340" y="207">Run</text></g>
+    <g fill="#ded6ee" font-size="12"><text x="285" y="178">Walk ▼</text><text x="544" y="178">Run ▼</text></g>
+    <text x="36" y="313" fill="#b2a9c5" font-size="14">MARKER SPLIT</text>
+    <text x="277" y="313" fill="#c4b9fa" font-size="23">→</text>
+    <rect x="408" y="289" width="86" height="36" rx="8" fill="#352849" stroke="#80679f"/>
+    <rect x="508" y="289" width="96" height="36" rx="8" fill="#213b48" stroke="#528198"/>
+    <g fill="#f5f1ff" font-size="14" text-anchor="middle" font-weight="700"><text x="451" y="312">FBX</text><text x="556" y="312">GLB</text></g>
+  </g>
+</svg>
