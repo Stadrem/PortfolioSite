@@ -6,6 +6,9 @@
 | --- | --- | --- |
 | Hyper NLA Exporter | `Addons/HyperNLA_Video.mp4` | `HyperNLA_thumbnail.svg` |
 | Profile Wall Generator | `Addons/ProfileWall_Video.mp4` | `ProfileWall_thumbnail.svg` |
+| Viewport Render & Batch Camera | — | `ViewportRender_thumbnail.svg` |
+
+시연 영상 경로가 있는 항목은 다음 순서로 연결합니다.
 
 1. 해당 시연 영상을 위 경로로 저장합니다.
 2. `index.html`의 해당 애드온 카드 안에서 영상 파일을 가리키는 `<source>` 주석 두 곳을 해제합니다.
@@ -14,7 +17,10 @@
 카드는 마우스를 올리면 무음 반복 재생하고, 상세 모달은 재생 컨트롤을 제공합니다.
 영상이 없거나 로드에 실패하면 안내 공간이 유지됩니다.
 
-두 SVG 썸네일은 실제 Blender 화면을 대신하는 워크플로 도식입니다.
+SVG 썸네일은 실제 Blender 화면을 대신하는 워크플로 도식입니다.
 실제 썸네일이 준비되면 `index.html`의 해당 이미지 경로를 변경하세요.
 
 Profile Wall Generator 권장 시연 순서: Curve 경로 작성 → 벽 생성 → 프로파일·두께·재질 조절 → 원본 Curve 편집과 자동 갱신 → 편집 가능한 Mesh로 전환.
+
+Viewport Render & Batch Camera는 현재 도식 썸네일과 기능 설명을 사용합니다.
+권장 시연 순서: 뷰포트 캡처 → 카메라별 해상도 설정 → 여러 카메라 일괄 출력 → 저장된 결과 이미지 확인.
